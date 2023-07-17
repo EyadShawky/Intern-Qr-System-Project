@@ -7,7 +7,6 @@
         <link rel="shortcut icon" href="favicon.ico" type="/images.png" />
     </head>
     <body>
-
-           
+       
     </body>
 </html>
