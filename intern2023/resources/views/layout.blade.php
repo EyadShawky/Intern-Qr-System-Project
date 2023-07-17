@@ -20,7 +20,7 @@
 <!-- Image and text -->
 <nav class="navbar navbar-light ">
   <a class="navbar-brand m-auto" href="/">
-    <img src="/Tatwwer-Misr.jpg" class="d-inline-block align-top" alt="">
+    <img id="logo" src="/Tatwwer-Misr.jpg" class="d-inline-block align-top" alt="">
   </a>
 </nav>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\userCode;
+use App\Models\UserData;
 use Illuminate\Http\Request;
 
 class userCodeController extends Controller
@@ -13,7 +14,8 @@ class userCodeController extends Controller
         return view('Home.admin');
     }
     public function qrCode(){
-        $userData = userCode::all();
-        return view('Home.qr', compact('userData'));
+        $userCode = userCode::all();
+        $userData = userData::all();
+        return view('Home.qr', compact('userData', 'userCode'));
     }
 }

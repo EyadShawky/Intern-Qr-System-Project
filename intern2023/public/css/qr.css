@@ -1,0 +1,30 @@
+.container{
+    text-align: center;
+    background-color: #f0f8ffcc;
+    /* border-radius: 15px; */
+    padding: 10px;
+}
+
+img{
+    margin-bottom: 10px;
+}
+
+.table{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+td{
+    font-weight: 500;
+    /* color: aliceblue; */
+}
+.table .thead-light th{
+    background-color: #495057;
+    color: #e9ecef;
+}
+
+body{
+    background-image: url("../image/Tatweer-Misr.jpg");
+    background-size: cover;
+    background-blend-mode: luminosity;
+}
