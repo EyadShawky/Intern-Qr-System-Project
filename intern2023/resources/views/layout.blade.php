@@ -19,8 +19,8 @@
 
 <!-- Image and text -->
 <nav class="navbar navbar-light ">
-  <a class="navbar-brand m-auto" href="#">
-    <img src="/Tatwwer-Misr.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand m-auto" href="/">
+    <img src="/Tatwwer-Misr.jpg" class="d-inline-block align-top" alt="">
   </a>
 </nav>
 
