@@ -13,6 +13,14 @@
 </head>
 
 <body>
+
+<!-- Image and text -->
+<nav class="navbar navbar-light ">
+  <a class="navbar-brand m-auto" href="#">
+    <img src="/Tatwwer-Misr.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+  </a>
+</nav>
+
 <div></div> @yield('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
