@@ -40,7 +40,7 @@ else{
             <h2>Your number is<br>'.$desiredCode['code'].'</h2>
             <img src="'.$desiredCode['qr_code'].'" width=120 height=120">
         </div>
-                ');
+        ');
     }
     else{
         echo 'not found';

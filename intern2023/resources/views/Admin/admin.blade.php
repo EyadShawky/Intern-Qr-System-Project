@@ -4,10 +4,6 @@
     Tatweer misr
 @endsection
 
-@section("styles")
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-@endsection
-
 @section('content')
 
     <div class="header">
@@ -17,7 +13,7 @@
     <form>
         <div class="form-group">
             <label for="from-group-inputs"></label>
-            <input type="text" class="form-control" id="from-group-inputs" placeholder="National ID / Passport" autocomplete="off" required>
+            <input type="text" class="form-control" id="from-group-inputs" autocomplete="off" placeholder="National ID / Passport" required>
     
             <button id="sub" type="submit" class="btn-find">Find</button>
         </div>
@@ -35,11 +31,4 @@
     })
 
 </script>
-<script>
-  
-</script>
-
-
-    
-
 @endsection
