@@ -33,50 +33,13 @@ else{
     }
     if($desiredCode && $desiredUser){
         echo('
-        <div class = "container">
+        <div class = "container upper">
             <h1>Hello, '.$desiredUser['Fname'].'</h1>
-            <h2>Here is your Number: '.$desiredCode['code'].'</h2>
+        </div>
+        <div class = "container lower">
+            <h2>Your number is<br>'.$desiredCode['code'].'</h2>
             <img src="'.$desiredCode['qr_code'].'" width=120 height=120">
-            </div>
-            <div class="container">
-            <table class="table">
-            <thead class="thead-light">
-            <tr>
-            <th scope="col">First</th>
-            <td>
-            '.$desiredUser['Fname'].'
-            </td>
-            </tr>
-            <tr>
-            <th scope="col">Last</th>
-            <td>
-            '.$desiredUser['Lname'].'
-            </td>
-            </tr>
-            <tr>
-            <th scope="col">ID</th>
-            <td>
-            '.$desiredUser['id'].'
-            </td>
-            </tr>
-            <tr>
-            <th scope="col">Phone</th>
-            
-            <td>
-            '.$desiredUser['Phone'].'
-            </td>
-            </tr>
-
-            <tr>
-            <th scope="col">E-mail</th>
-                <td>
-                '.$desiredUser['Email'].'
-                </td>
-                </tr>
-            </tr>
-            </thead>
-                </table>
-            </div>
+        </div>
                 ');
     }
     else{

@@ -1,11 +1,30 @@
 .container{
     text-align: center;
     background-color: #f0f8ffcc;
+    /* border-radius: 15px; */
     padding: 10px;
 }
 
 img{
     margin-bottom: 10px;
+}
+
+.table{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.table td{
+    font-weight: 500;
+    /* color: aliceblue; */
+    border-top: 1px solid #495057;
+}
+.table .fname{
+    border-top: none;
+}
+.table .thead-light th{
+    background-color: #495057;
+    color: #e9ecef;
 }
 
 body{
@@ -17,20 +36,9 @@ body{
 .upper{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    margin-top: 3%;
-    padding-bottom: 5%;
 }
 .lower{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding-bottom: 5%;
-
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-}
-.lower h2{
-    align-self: center;
+    padding-bottom: 25px;
 }
