@@ -11,10 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-<<<<<<< HEAD
         // $userData = UserData::all();
-=======
->>>>>>> cf7185a8615838f4cfc06ca2079960ff7f235112
         return view('Home.home');
     }
 
