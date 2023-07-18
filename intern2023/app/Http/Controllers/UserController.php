@@ -24,7 +24,6 @@ class UserController extends Controller
         'Email' => 'required|email|unique:users',
     ]);
 
-    // dd($dataMail);
    $userCode = userCode::select('code')->get();
 
  
