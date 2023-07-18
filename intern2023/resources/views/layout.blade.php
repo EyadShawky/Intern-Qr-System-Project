@@ -34,11 +34,12 @@
         document.getElementById('extraId').style.display = '';
         document.getElementById('natId').disabled = false;
         document.getElementById('extra').style.display = 'none';
-        
+        document.getElementById('passport').removeAttribute("required");
       } else if(document.getElementById('defect').value == 'pass') {
         document.getElementById('extra').style.display = '';
         document.getElementById('passport').disabled = false;
         document.getElementById('extraId').style.display = 'none';
+        document.getElementById('natId').removeAttribute("required");
   }
   else{
     document.getElementById('extraId').style.display = 'none';
