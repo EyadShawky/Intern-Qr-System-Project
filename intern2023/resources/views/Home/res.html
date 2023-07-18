@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Result</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div id="qrCodeContainer"></div>
+
+    <script>
+        // Retrieve the data from the URL query parameter
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var data = decodeURIComponent(urlParams.get('data'));
+
+        // Generate the QR code
+        var qrcode = new QRCode("qrCodeContainer", {
+            text: data,
+            width: 256,
+            height: 256
+        });
+    </script>
+</body>
+</html>
