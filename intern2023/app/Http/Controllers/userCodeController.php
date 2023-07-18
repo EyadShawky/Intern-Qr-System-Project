@@ -21,13 +21,17 @@ class userCodeController extends Controller
 
     public function store(Request $request)
 {
-    $validatedData = $request->validate([
+    $inputs = $request->all();
+
+    $v = validator($inputs, [
         'user_id' => 'nullable|string|max:14|min:9|exists:missions',
+        'id' => 'nullable|string|max:14|min:9',
     ]);
-
-    UserCode::create($validatedData);
-
-    return redirect()->route('user-code.index');
+    $user = new UserCode();
+    $user->user_id = $request['user_id'];
+    $user->id = $request['id'];
+    $user->save();
+    return redirect( url('/') );
 }
 
 }
