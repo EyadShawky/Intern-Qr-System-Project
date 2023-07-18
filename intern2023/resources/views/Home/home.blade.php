@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('title')
-Home
+Tatweer Misr | Form Page
 @endsection
 
 @section('content')
