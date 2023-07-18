@@ -8,5 +8,19 @@ body{
     overflow: hidden;
     background-color: #121212;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: capitalize;
+}
 
+.forms-control{
+    padding: 20px;
+    background-color: #ffff;
+    /* align-items: center; */
+    text-align: center;
+    text-size-adjust: 50px;
+    color: #171717;
+    text-size-adjust: 20px;
+    box-sizing: border-box;
+    width: 300px;
+    border-radius: 0 10px 10px 0;
+    height: 60px;
 }

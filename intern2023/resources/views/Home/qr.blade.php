@@ -12,10 +12,7 @@
 
 <?php
 
-if (!isset($_GET['q'])) {
-    echo 'Not authorized';
-}
-else{
+if (isset($_GET['q'])) {
     $id= $_GET['q'];
     $desiredCode = null;
     $desiredUser = null;
@@ -43,8 +40,24 @@ else{
         ');
     }
     else{
-        echo 'not found';
+        echo('
+        <div class = "container upper">
+            <h1>User Not Found.</h1>
+        </div>
+        <div class = "container lower">
+            <h2>Please register using this <a href="http://127.0.0.1:8000">link</a>.</h2>
+        </div>
+        ');
     }
+}else{
+    echo('
+    <div class = "container upper">
+        <h1>User Not Found.</h1>
+    </div>
+    <div class = "container lower">
+        <h2>Please register using this <a href="http://127.0.0.1:8000">link</a>.</h2>
+    </div>
+    ');
 }
 ?>
 

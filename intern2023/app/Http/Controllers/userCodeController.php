@@ -13,10 +13,11 @@ class userCodeController extends Controller
     public function index(){
         return view('Home.admin');
     }
-    public function qrCode(){
+    public function qrCode(Request $request){
+        $id = $request->query('q');
         $userCode = userCode::all();
         $userData = userData::all();
-        return view('Home.qr', compact('userData', 'userCode'));
+        return view('Home.qr', compact('userData', 'userCode'))->with('q', $id);
     }
 
     public function store(Request $request)
