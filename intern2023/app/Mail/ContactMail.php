@@ -12,17 +12,16 @@ use Illuminate\Queue\SerializesModels;
 class contactMail extends Mailable
 {
     use Queueable, SerializesModels;
-
     public $dataMail;
-    public $code;
+    public $userCode;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($dataMail, $code)
+    public function __construct($dataMail, $userCode)
     {
-        $this->dataMail = $dataMail;
-        $this->code = $code;
+      $this->dataMail = $dataMail;
+      $this->code = $userCode;
     }
 
     /**
@@ -42,10 +41,6 @@ class contactMail extends Mailable
     {
         return new Content(
             view: 'contact-message',
-            data: [
-                'dataMail' => $this->dataMail,
-                'code' => $this->code,
-            ],
         );
     }
 
@@ -59,3 +54,4 @@ class contactMail extends Mailable
         return [];
     }
 }
+

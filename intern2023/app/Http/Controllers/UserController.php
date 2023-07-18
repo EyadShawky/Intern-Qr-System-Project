@@ -25,14 +25,14 @@ class UserController extends Controller
     ]);
 
 
-   $code = userCode::select('code')->get();
+   $userCode = userCode::select('code')->get();
 
  
     UserData::create($request->all(), $dataMail);
 
     // Send email
     Mail::to($request->input('Email'))
-    ->send(new ContactMail($dataMail, $code));
+    ->send(new ContactMail($dataMail, $userCode));
     return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
 }
 }
