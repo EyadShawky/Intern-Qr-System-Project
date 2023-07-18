@@ -27,18 +27,18 @@ class UserController extends Controller
             'Email' => 'required|email|unique:users',
         ]);
 
-        $user_id = DB::table('user_code')->insertGetId([
-            'user_id' => $request->input('id'),
-            'code' => '12',
-            'qr_code' => '1s2'
-        ]);
+        // $user_code = new userCode();
+        // $user_code->user_id = $request->input('id');
+        // $user_code->code = '1ss2';
+        // $user_code->qr_code = '1s22';
+        // $user_code->save();
 
-        UserData::create($request->all(), $dataMail, $user_id);
+        UserData::create($request->all(), $dataMail);
 
         $userCode = userCode::select('code')->get();
         // Send email
-        Mail::to($request->input('Email'))
-            ->send(new ContactMail($dataMail, $userCode));
-        return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
+        // Mail::to($request->input('Email'))
+        //     ->send(new ContactMail($dataMail, $userCode));
+        // return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
     }
 }

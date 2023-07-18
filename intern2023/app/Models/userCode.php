@@ -9,5 +9,5 @@ class userCode extends Model
 {
     use HasFactory;
     protected $table = 'user_code';
-    protected $fillable = ['id','user_id','code'];
+    protected $fillable = ['user_id','code','qr_code'];
 }

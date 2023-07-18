@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('user_code', function (Blueprint $table) {
-            $table->string('user_id', 14);
+            $table->integer('user_id');
             $table->string('code', 5)->unique();
             $table->text('qr_code')->unique();
             $table->timestamps();
-            
             $table->foreign('user_id')->references('id')->on('user_data');
         });
     }

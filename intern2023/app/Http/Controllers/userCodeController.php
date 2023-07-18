@@ -25,13 +25,10 @@ class userCodeController extends Controller
 
     $v = validator($inputs, [
         'user_id' => 'nullable|string|max:14|min:9|exists:missions',
-        'id' => 'nullable|string|max:14|min:9',
+       
     ]);
-    $user = new UserCode();
-    $user->user_id = $request['user_id'];
-    $user->id = $request['id'];
-    $user->save();
-    return redirect( url('/') );
+
+    UserData::create($request->all());
 }
 
 }
