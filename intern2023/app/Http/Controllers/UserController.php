@@ -2,30 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\contactMail;
+use App\Models\userCode;
 use App\Models\UserData;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 class UserController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         // $userData = UserData::all();
+=======
+>>>>>>> cf7185a8615838f4cfc06ca2079960ff7f235112
         return view('Home.home');
     }
 
     public function store(Request $request)
-    {
-        $rules = [
-            'id' => 'nullable|integer',
-            'Fname' => 'required|string|max:255',
-            'Lname' => 'required|string|max:255',
-            'Phone' => 'required|string|min:10|max:15',
-            'Email' => 'required|email|unique:users',
-        ];
-        
-        UserData::create($request->all(), $rules);
-      
-    //    .
-        return redirect(url('/'));
-    }
+{
+    $dataMail = $this->validate($request,[
+        'id' => 'nullable|string|max:14|min:9',
+        'Fname' => 'required|string|max:255',
+        'Lname' => 'required|string|max:255',
+        'Phone' => 'required|string|min:10|max:15',
+        'Email' => 'required|email|unique:users',
+    ]);
+
+
+   $userCode = userCode::select('code')->get();
+
+ 
+    UserData::create($request->all(), $dataMail);
+
+    // Send email
+    Mail::to($request->input('Email'))
+    ->send(new ContactMail($dataMail, $userCode));
+    return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
+}
 }

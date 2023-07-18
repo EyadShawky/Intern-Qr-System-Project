@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/' , [UserController::class , 'index']);
 Route::post('/' , [UserController::class , 'store']);
 Route::get('/admin/pdRkAAT+XxepOb8drasiSw==' , [adminController::class , 'index']);
+Route::get('/admin/pdRkAAT+XxepOb8drasiSw==/qr' , [adminController::class , 'adminQR']);
 Route::get('/qr' , [userCodeController::class , 'qrCode']);
-Route::get('/admin' , [userCodeController::class , 'index']);
 
