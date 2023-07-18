@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $userData = UserData::all();
+        // $userData = UserData::all();
         return view('Home.home');
     }
 

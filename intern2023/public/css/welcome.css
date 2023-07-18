@@ -1,23 +1,29 @@
-input:focus {
-    background-color: rgb(234, 231, 228);
-}
-/* 
-input[type=text] {
-    visibility:hidden;
+.section-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; 
+    /* background: url("../image/download\ \(1\).png")no-repeat; */
+    background-color: black;
+    background-position: center;
+    background-size: cover;
 }
 
-input[type=checkbox]:checked + input[type=text] {
-    visibility:visible;
+/* .form-all{
+    position: relative;
+    width: 700px;
+    height: 500px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    justify-content: center;
+    align-items:center ;
+    margin: auto;
+    text-align: center;
 } */
 
-.body{
-    margin: auto;
-    background-color: rgb(0, 0, 0);
-    background-image: url("../image/tatweer-misr-developments.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-}
 
 .form-group{
     margin: auto;
@@ -25,23 +31,27 @@ input[type=checkbox]:checked + input[type=text] {
     size: 50px; 
     align-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center; 
     /* text-decoration-color: rgb(0, 0, 0); */
     color: rgb(177, 171, 171);
     border-radius: 30px;
-    border-color: rgb(255, 0, 0);
+    border-color: rgb(160, 24, 24);
     box-sizing: border-box;
+}
+.input-group-text{
+    width: 180px;
+    color: rgb(136, 17, 17);
+    background-color: #c3c3c3ca;
 }
 
 .form-control{
-    margin: auto;
+
     padding: 20px;
-    background-color: rgb(180, 173, 173);
+    background-color: rgb(255, 255, 255);
     align-items: center;
     text-align: center;
-    align-content: center;
     text-size-adjust: 50px;
-    color: rgb(167, 162, 162);
+    color: rgb(0, 0, 0);
     text-size-adjust: 20px;
     box-sizing: border-box;
     width: 300px;
@@ -49,28 +59,39 @@ input[type=checkbox]:checked + input[type=text] {
 
 }
 
-/* 
-.form-control::placeholder{
-    color: rgb(133, 24, 24);
-} */
+.input-group{
+    width: 500px;
+    padding: 10px;
+}
 
 .btn-submit{
-    color: rgb(133, 24, 24);
+    margin: auto;
+    color: rgb(160, 24, 24);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     size: 100px;
     width: 300px;
     height: 50px;
-    background-color:rgb(200, 195, 195);;
+    background-color:#c3c3c3ca;
+    border-color: rgb(226, 216, 216);
+    border-radius: 5px;
 }
 
-
 .btn-submit:focus{
-    color: rgb(186, 186, 180);
-    background-color: rgb(225, 225, 214);
+    color: rgb(160, 24, 24);
+    background-color: rgb(240, 231, 231);
+    border-color: rgb(189, 183, 183);
+    border-radius: 5px;
+}
+
+.note{
+    color: rgb(218, 65, 65);
+    padding-left: 70px;
+    margin: auto;
+    text-align: center;
 }
 
 .header{
     text-align: center;
     color: rgb(160, 24, 24);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+} 

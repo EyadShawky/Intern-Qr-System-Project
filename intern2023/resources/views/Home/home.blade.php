@@ -6,51 +6,90 @@
 
 @section('content')
 
-    
+<section class="section-user">
     <div class ="">
-        <div class="header">
-            <h1 > Fill the following fields </h1>
-        </div>
-
-        <form class="form-all">
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="text" class="form-control" id="from-group-inputs" placeholder="First Name *" required>
-            </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="text" class="form-control" id="from-group-inputs" placeholder="Last Name *" required>
-            </div>
-            <div class="form-group">
-                <!-- <input type="checkbox">
-                <label for="from-group-inputs">National ID</label> -->
-                <input type="checkbox" name="check1" onclick="dynInput(this);">
-                <label for="from-group-inputs">National ID</label>
-                <p id="insertinputs"></p>
-                <input type="checkbox" name="check2" onclick="dynInput(this);">
-                <label for="from-group-inputs">Passport</label>
-                <p id="insertinputs"></p>
-                <!-- <input type="number" class="form-control" id="from-group-inputs" placeholder="National ID *" required> -->
-            </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="number" class="form-control" id="from-group-inputs" placeholder="Passport *" required>
-            </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="email" class="form-control" id="from-group-inputs" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="number" class="form-control" id="from-group-inputs" placeholder="Phone Number *" required>
-            </div>
         
-            <div class="form-group">
-                <button type="submit" class="btn-submit">Submit</button>
-            </div>
+        <form >
+
+        
+            <div class="form-all"> 
             
+                <div class="header">
+                    <h1 > Fill the following fields </h1>
+                </div>
+
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">First name *</span>
+                </div>
+
+                <input type="text" class="form-control" required>
+                </div>
+
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">Last name *</span>
+                </div>
+
+                <input type="text" class="form-control" required>
+                </div>
+
+                <div class="input-group">
+
+                    <div class="input-group-prepend">
+
+                    <span class="input-group-text" id="">National ID / Passport *</span>
+                        <select onchange='checkIfYes()' class="form-control" id="defect" name="defect">
+                            <option value="" disabled selected>National ID / Passport?</option>
+                            <option id="id" value="id">National ID</option>
+                            <option id="pass" value="pass">Passport</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="input-group" id="extraId" name="extraId" style="display: none">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">National ID *</span>
+                </div>
+                <input type="number" class="form-control" id="natId" name="natId" required>
+                </div>
+
+                <div class="input-group"  id="extra" name="extra" style="display: none">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">Passport *</span>
+                </div>
+
+                <input type="text" class="form-control"id="passport" name="passport" required disabled>
+                </div>
+
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">Telephone number *</span>
+                    </div>
+
+                    <input type="number" class="form-control" required>
+                </div>
+
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">Email</span>
+                </div>
+
+                <input type="email" class="form-control">
+                </div>
+
+
+                <span class="note"> Please note that the fields followed by * are required</span>
+                
+            <div class="form-group">
+                   
+                    <button type="submit" class="btn-submit">Submit</button>
+                </div>
         </form> 
     </div>
+    </section>
     
-
+    
 @endsection
+

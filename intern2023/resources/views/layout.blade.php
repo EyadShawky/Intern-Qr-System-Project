@@ -27,28 +27,22 @@
 <div></div> @yield('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script type="text/javascript">
- function dynInput(cbox) {
-  if (cbox.checked && cbox.name=="check2") {
-    var input = document.createElement("input");
-    input.type = "text";
-    input.placeholder ="Passport"
-    var div = document.createElement("div");
-    div.id = cbox.name;
-    // div.innerHTML = cbox.name;
-    div.appendChild(input);
-    document.getElementById("insertinputs").appendChild(div);
-  } else if(cbox.checked && cbox.name=="check1") { 
-    var input = document.createElement("input");
-    input.type = "text";
-    input.placeholder ="National ID"
-    var div = document.createElement("div");
-    div.id = cbox.name;
-    // div.innerHTML = cbox.name;
-    div.appendChild(input);
-    document.getElementById("insertinputs").appendChild(div);
-  } else {
-    document.getElementById(cbox.name).remove();
+
+<script>      
+  function checkIfYes() {
+      if (document.getElementById('defect').value == 'id') {
+        document.getElementById('extraId').style.display = '';
+        document.getElementById('natId').disabled = false;
+        document.getElementById('extra').style.display = 'none';
+        
+      } else if(document.getElementById('defect').value == 'pass') {
+        document.getElementById('extra').style.display = '';
+        document.getElementById('passport').disabled = false;
+        document.getElementById('extraId').style.display = 'none';
+  }
+  else{
+    document.getElementById('extraId').style.display = 'none';
+    document.getElementById('extra').style.display = 'none';
   }
 }
 </script>
