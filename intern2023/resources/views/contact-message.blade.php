@@ -13,8 +13,8 @@
     Hello Dear,
 </h1>
 
-<p>National ID/Passpowrt : {{$dataMail['id']}}</p>
-<p>Code :  {{$userCode->code}}</p>
+<h3>National ID/Passpowrt : {{$dataMail['id']}}</h3>
+<h3>Code :  {{$userCode->code}} </h3>
 
 
 </body>
