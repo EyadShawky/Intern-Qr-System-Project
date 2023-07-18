@@ -15,7 +15,7 @@
     @yield('page-style')
 </head>
 
-<body>
+<body class="body-style">
 
 <!-- Image and text -->
 <nav class="navbar navbar-light ">
@@ -24,7 +24,7 @@
   </a>
 </nav>
 
-<div></div> @yield('content')
+<div  ></div> @yield('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 

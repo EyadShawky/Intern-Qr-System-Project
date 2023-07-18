@@ -14,7 +14,7 @@
 </h1>
 
 <h3>National ID/Passpowrt : {{$dataMail['id']}}</h3>
-<h3>Code :  {{$userCode->code}} </h3>
+
 
 
 </body>
