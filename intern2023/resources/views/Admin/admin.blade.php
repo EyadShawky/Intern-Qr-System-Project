@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('title')
-    Tatweer misr
+    Tatweer Misr Admin
 @endsection
 
 @section('content')
@@ -17,5 +17,8 @@
     
         <button type="submit" class="btn-find">Find</button>
     </form>
+
+
+    
 
 @endsection

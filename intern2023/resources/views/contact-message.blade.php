@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Form</title>
+    <title>Code Number</title>
 </head>
 
 <body>
 
 <h1>
-    Contact Form
+    Hello Dear,
 </h1>
 
-<p>First Name : {{$rules['Fname']}}</p>
-<p>Email : {{$rules['Email']}}</p>
+<p>National ID/Passpowrt : {{$dataMail['id']}}</p>
+<p>Code :  {{$code['code']}}</p>
 
 
 </body>

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\contactMail;
-use Illuminate\Http\Request;
+use App\Models\userCode;
 use App\Models\UserData;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 class UserController extends Controller
 {
@@ -15,20 +16,23 @@ class UserController extends Controller
 
     public function store(Request $request)
 {
-    $rules = [
-        'id' => 'nullable|integer',
+    $dataMail = $this->validate($request,[
+        'id' => 'nullable|string|max:14|min:9',
         'Fname' => 'required|string|max:255',
         'Lname' => 'required|string|max:255',
         'Phone' => 'required|string|min:10|max:15',
         'Email' => 'required|email|unique:users',
-    ];
+    ]);
 
-    // Create UserData record
-    UserData::create($request->all(), $rules);
+
+   $code = userCode::select('code')->get();
+
+ 
+    UserData::create($request->all(), $dataMail);
 
     // Send email
     Mail::to($request->input('Email'))
-    ->send(new ContactMail($rules));
+    ->send(new ContactMail($dataMail, $code));
     return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
 }
 }
