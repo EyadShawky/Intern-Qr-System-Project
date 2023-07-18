@@ -1,56 +1,49 @@
 @extends ('layout')
 
 @section('title')
-    Tatweer misr
+Home
 @endsection
 
 @section('content')
+<form class="container"  action="{{url('/')}}" method="POST">
+                @csrf
+            <div class="input-group mb-3 w-100">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                </div>
+                <input name="id" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
 
-    
-    <div class ="">
-        <div class="header">
-            <h1 > Fill the following fields </h1>
-        </div>
 
-        <form class="form-all">
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="text" class="form-control" id="from-group-inputs" placeholder="First Name *" required>
+            <div class="input-group mb-3 w-100">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">locations</span>
+                </div>
+                <input name="Fname" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="text" class="form-control" id="from-group-inputs" placeholder="Last Name *" required>
-            </div>
-            <div class="form-group">
-                <!-- <input type="checkbox">
-                <label for="from-group-inputs">National ID</label> -->
-                <input type="checkbox" name="check1" onclick="dynInput(this);">
-                <label for="from-group-inputs">National ID</label>
-                <p id="insertinputs"></p>
-                <input type="checkbox" name="check2" onclick="dynInput(this);">
-                <label for="from-group-inputs">Passport</label>
-                <p id="insertinputs"></p>
-                <!-- <input type="number" class="form-control" id="from-group-inputs" placeholder="National ID *" required> -->
-            </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="number" class="form-control" id="from-group-inputs" placeholder="Passport *" required>
-            </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="email" class="form-control" id="from-group-inputs" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="from-group-inputs"></label>
-                <input type="number" class="form-control" id="from-group-inputs" placeholder="Phone Number *" required>
-            </div>
-        
-            <div class="form-group">
-                <button type="submit" class="btn-submit">Submit</button>
-            </div>
-            
-        </form> 
-    </div>
-    
 
+            <div class="input-group mb-3 w-100">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">locations</span>
+                </div>
+                <input name="Lname" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+
+            <div class="input-group mb-3 w-100">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">number</span>
+                </div>
+                <input name="Phone" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            </div>
+
+            <div class="input-group mb-3 w-100">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">number_of_employess</span>
+                </div>
+                <input name="Email" type="email" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            </div>
+
+            <input type="submit" value="store" class="btn btn-danger create-button  mt-2 text-capitalize">
+            </form>
 @endsection
