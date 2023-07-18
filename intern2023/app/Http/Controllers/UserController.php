@@ -11,7 +11,6 @@ class UserController extends Controller
 {
     public function index()
     {
-        // $userData = UserData::all();
         return view('Home.home');
     }
 
@@ -25,11 +24,12 @@ class UserController extends Controller
         'Email' => 'required|email|unique:users',
     ]);
 
-
+    // dd($dataMail);
    $userCode = userCode::select('code')->get();
 
  
     UserData::create($request->all(), $dataMail);
+    
 
     // Send email
     Mail::to($request->input('Email'))

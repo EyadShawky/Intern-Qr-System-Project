@@ -9,8 +9,7 @@ Home
 
 
 <section class="section-user">
-    <div class="">
-
+    <div>
         <form action="{{url('/')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-all">
@@ -18,20 +17,15 @@ Home
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">First name</span>
                     </div>
-
                     <input name="Fname" type="text" class="form-control" required>
                 </div>
-
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">Last name </span>
                     </div>
-
                     <input name="Lname" type="text" class="form-control" required>
                 </div>
-
                 <div class="input-group">
-
                     <div class="input-group-prepend">
 
                         <span class="input-group-text" id="">National ID / Passport </span>
@@ -41,24 +35,20 @@ Home
                             <option id="pass" value="pass">Passport</option>
                         </select>
                     </div>
-
                 </div>
                 <div class="input-group" id="extraId" name="extraId" style="display: none">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">National ID </span>
                     </div>
-                    <input name="id" type="number" class="form-control" id="natId" name="natId" required>
+                    <input name="id" type="number" class="form-control" id="    " required>
                 </div>
-
                 <div class="input-group" id="extra" name="extra" style="display: none">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">Passport </span>
                     </div>
 
-                    <input name="id" type="text" class="form-control" id="passport" name="passport" required disabled>
+                    <input name="id" type="text" class="form-control" id="passport" required disabled>
                 </div>
-
-
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">Telephone number </span>
@@ -66,7 +56,6 @@ Home
 
                     <input name="Phone" type="number" class="form-control" required>
                 </div>
-
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">Email</span>
@@ -74,8 +63,6 @@ Home
 
                     <input name="Email" type="email" class="form-control">
                 </div>
-
-
                 <div class="form-group">
 
                     <button type="submit" class="btn-submit">Submit</button>
