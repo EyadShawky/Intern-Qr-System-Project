@@ -18,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/' , [UserController::class , 'index']);
 Route::post('/' , [UserController::class , 'store']);
-Route::get('/admin/H8+Qmuu76HT4W7NjYRO1llEjfNC2CI59A3dQjgfCZfs=' , [adminController::class , 'index']);
+Route::get('/admin/pdRkAAT+XxepOb8drasiSw==' , [adminController::class , 'index']);
+Route::get('/admin/pdRkAAT+XxepOb8drasiSw==/qr' , [adminController::class , 'adminQR']);
+Route::get('/qr' , [userCodeController::class , 'qrCode']);
 

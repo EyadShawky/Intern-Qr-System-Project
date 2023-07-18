@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('title')
-    Tatweer Misr Admin
+    Tatweer misr
 @endsection
 
 @section('content')
@@ -13,12 +13,22 @@
     <form>
         <div class="form-group">
             <label for="from-group-inputs"></label>
-            <input type="text" class="form-control" id="from-group-inputs" placeholder="National ID / Passport" required>
+            <input type="text" class="form-control" id="from-group-inputs" autocomplete="off" placeholder="National ID / Passport" required>
     
-        <button type="submit" class="btn-find">Find</button>
+            <button id="sub" type="submit" class="btn-find">Find</button>
+        </div>
     </form>
 
+@endsection
 
-    
+@section("scripts")
+<script>
+    let form = document.getElementById("sub");
+    form.addEventListener("click", function(e){
+        e.preventDefault();
+        let id = document.getElementById("from-group-inputs").value;
+        window.location.href = "/admin/pdRkAAT+XxepOb8drasiSw==/qr?id="+id;
+    })
 
+</script>
 @endsection
