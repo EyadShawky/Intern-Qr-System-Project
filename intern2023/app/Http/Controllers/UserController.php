@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\contactMail;
 use App\Models\userCode;
 use App\Models\UserData;
+use FFI\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -27,13 +28,19 @@ class UserController extends Controller
             'Email' => 'required|email|unique:users',
         ]);
 
-        // $user_code = new userCode();
-        // $user_code->user_id = $request->input('id');
-        // $user_code->code = '1ss2';
-        // $user_code->qr_code = '1s22';
-        // $user_code->save();
-
+        
+        
         UserData::create($request->all(), $dataMail);
+
+        $user_id = request('id');
+
+        // Check if the user_id exists in the user_data table
+            $user_id = request('id');
+            $user_code = new userCode();
+            $user_code->user_id = $user_id;
+            $user_code->code = '1s35';
+            $user_code->qr_code = '1235';
+            $user_code->save();
 
         $userCode = userCode::select('code')->get();
         // Send email
