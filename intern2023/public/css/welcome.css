@@ -18,21 +18,23 @@
     align-content: center;
     align-items: center;
     text-align: center; 
-    /* text-decoration-color: rgb(0, 0, 0); */
-    color: rgb(177, 171, 171);
+    color: #171717;
     border-radius: 30px;
-    border-color: rgb(160, 24, 24);
+    border-color: #DA0037;
     box-sizing: border-box;
+    border-radius:10px 0 0 10px;
 }
 .input-group-text{
     width: 180px;
-    color: rgb(136, 17, 17);
-    background-color: #c3c3c3ca;
+    color: #2C3333;
+    background-color: #EDEDED;
+    border-radius:10px 0 0 10px;
+
 }
 
 .form-control{
     padding: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffff;
     align-items: center;
     text-align: center;
     text-size-adjust: 50px;
@@ -40,6 +42,20 @@
     text-size-adjust: 20px;
     box-sizing: border-box;
     width: 300px;
+    border-radius:0 10px 10px 0;
+}
+
+.form-control:focus{
+    padding: 20px;
+    background-color: #fff;
+    align-items: center;
+    text-align: center;
+    text-size-adjust: 50px;
+    color: rgb(0, 0, 0);
+    text-size-adjust: 20px;
+    box-sizing: border-box;
+    width: 300px;
+    border-radius:0 10px 10px 0;
 }
 
 .input-group{
@@ -49,31 +65,32 @@
 
 .btn-submit{
     margin: auto;
-    color: rgb(160, 24, 24);
+    color: #EDEDED;
     size: 100px;
     width: 300px;
     height: 50px;
-    background-color:#c3c3c3ca;
-    border-color: rgb(226, 216, 216);
-    border-radius: 5px;
+    background-color: #DA0037;
+    border-color: #DA0037;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn-submit:hover{
+    color: #EDEDED;
+    background-color: #121212;
+    border-color: #EDEDED;
 }
 
 .btn-submit:focus{
-    color: rgb(160, 24, 24);
-    background-color: rgb(240, 231, 231);
-    border-color: rgb(189, 183, 183);
+    color: #EDEDED;
+    background-color: #DA0037;
+    border-color: #DA0037;
     border-radius: 5px;
 }
 
-.note{
-    color: rgb(218, 65, 65);
-    padding-left: 70px;
-    margin: auto;
-    text-align: center;
-}
 
 .header{
     text-align: center;
-    color: rgb(160, 24, 24);
+    color: #DA0037;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 } 
