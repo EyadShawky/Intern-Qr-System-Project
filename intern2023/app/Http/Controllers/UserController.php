@@ -32,8 +32,8 @@ class UserController extends Controller
     
 
     // Send email
-    Mail::to($request->input('Email'))
-    ->send(new ContactMail($dataMail, $userCode));
-    return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
+    // Mail::to($request->input('Email'))
+    // ->send(new ContactMail($dataMail, $userCode));
+    // return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
 }
 }

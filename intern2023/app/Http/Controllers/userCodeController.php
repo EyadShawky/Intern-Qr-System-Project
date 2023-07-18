@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\userCode;
 use App\Models\UserData;
+use Illuminate\Http\Request;
 
 class userCodeController extends Controller
 {
@@ -17,4 +18,16 @@ class userCodeController extends Controller
         $userData = userData::all();
         return view('Home.qr', compact('userData', 'userCode'));
     }
+
+    public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'user_id' => 'nullable|string|max:14|min:9|exists:missions',
+    ]);
+
+    UserCode::create($validatedData);
+
+    return redirect()->route('user-code.index');
+}
+
 }

@@ -10,7 +10,7 @@ Home
 
 <section class="section-user">
     <div>
-        <form action="{{url('/')}}" method="post" enctype="multipart/form-data">
+        <form id="form" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-all">
                 <div class="input-group">
@@ -61,7 +61,7 @@ Home
                         <span class="input-group-text" id="">Email</span>
                     </div>
 
-                    <input name="Email" type="email" class="form-control">
+                    <input name="Email" type="email" class="form-control" required>
                 </div>
                 <div class="form-group">
 

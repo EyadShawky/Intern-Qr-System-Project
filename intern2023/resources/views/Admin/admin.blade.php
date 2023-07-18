@@ -9,21 +9,12 @@
 <!-- 
     <div class="body">
     <form>
-<<<<<<< HEAD
-        <div class="form-group-admin">
-            <label class="label" for="natiIdPass">Natioanl ID / Passport</label>
-            <input type="text" class="form-control" id="natiIdPass"placeholder="National ID / Pasport">
-        </div>
-        
-        <button type="submit" class="btn-admin">Search</button>
-=======
         <div class="form-group">
             <label for="from-group-inputs"></label>
             <input type="text" class="form-control" id="from-group-inputs" autocomplete="off" placeholder="National ID / Passport" required>
     
             <button id="sub" type="submit" class="btn-find">Find</button>
         </div>
->>>>>>> cf7185a8615838f4cfc06ca2079960ff7f235112
     </form>
     </div> -->
 
@@ -96,7 +87,7 @@
     let form = document.getElementById("sub");
     form.addEventListener("click", function(e){
         e.preventDefault();
-        let id = document.getElementById("from-group-inputs").value;
+        let id = document.getElementById("natIdPass").value;
         window.location.href = "/admin/pdRkAAT+XxepOb8drasiSw==/qr?id="+id;
     })
 
