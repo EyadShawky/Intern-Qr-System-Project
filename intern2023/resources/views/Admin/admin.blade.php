@@ -16,7 +16,24 @@
             <button type="submit"><img src="../image/download__2_-removebg-preview.png"></button>
         </form>
     </div>
-    
+
+    <table class="table table-dark container">
+    <thead>
+    <tr>
+        <th scope="col">National / Passport ID</th>
+        <th scope="col">Code</th>
+    </tr>
+    </thead>
+    @foreach($userCode as $user)
+        <tbody>
+        <tr>
+            <th scope="row">{{$user->user_id}}</th>
+            <th scope="row">{{$user->code}}</th>
+        </tr>
+        </tbody>
+    @endforeach
+</table>
+
 
 @endsection
 

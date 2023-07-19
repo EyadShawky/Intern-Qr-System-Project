@@ -20,16 +20,5 @@ class userCodeController extends Controller
         return view('Home.qr', compact('userData', 'userCode'))->with('q', $id);
     }
 
-    public function store(Request $request)
-{
-    $inputs = $request->all();
-
-    $v = validator($inputs, [
-        'user_id' => 'nullable|string|max:14|min:9|exists:missions',
-       
-    ]);
-
-    UserData::create($request->all());
-}
 
 }
