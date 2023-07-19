@@ -6,45 +6,11 @@
 
 @section('content')
 
-<!-- 
-    <div class="body">
-    <form>
-        <div class="form-group">
-            <label for="from-group-inputs"></label>
-            <input type="text" class="form-control" id="from-group-inputs" autocomplete="off" placeholder="National ID / Passport" required>
-    
-            <button id="sub" type="submit" class="btn-find">Find</button>
-        </div>
-    </form>
-    </div> -->
-
-   
-
-
-
-    <div class="body">
-        
-        
-        <div class="container">
-            
-        <form class="form-admin">
-
-            <div class="header">
-                <h1>Search for a user</h1>
-            </div>
-            <div class="form-group">
-                <div class="form-group-admin">
-                    <label class="label" for="natIdPass">Natioanl ID / Passport</label>
-                    <input class="input-admin" type="email" class="" id="natIdPass" placeholder="Natioanl ID / Passport *" required>
-                    
-                </div>
-            
-                <button type="submit" class="btn-admin ">search</button>
-            </div>
-            
+    <div class="container">
+        <form action="" class="search-form">
+            <input class="search-input" type="text" placeholder="National ID / Passport" name="serach" required>
+            <button type="submit"><img src="../image/download__2_-removebg-preview.png"></button>
         </form>
-        </div>
-        
     </div>
 
     <table class="table table-dark container">

@@ -28,11 +28,19 @@ if (isset($_GET['q'])) {
             break;
         }
     }
-    if($desiredCode && $desiredUser){
+    if($desiredCode){
+        if($desiredUser){
         echo('
         <div class = "container upper">
             <h1>Hello, '.$desiredUser['Fname'].'</h1>
-        </div>
+        </div>');
+        }else{
+        echo('
+        <div class = "container upper">
+            <h1>Welcome</h1>
+        </div>');
+        }
+        echo('
         <div class = "container lower">
             <h2>Your number is<br>'.$desiredCode['code'].'</h2>
             <img src="'.$desiredCode['qr_code'].'" width=120 height=120">

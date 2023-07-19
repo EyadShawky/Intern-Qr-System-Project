@@ -12,6 +12,8 @@ body{
     background-image: url("../image/Tatweer-Misr.jpg");
     background-size: cover;
     background-blend-mode: luminosity;
+    background-attachment: fixed;
+    overflow: auto;
 }
 
 .upper{
