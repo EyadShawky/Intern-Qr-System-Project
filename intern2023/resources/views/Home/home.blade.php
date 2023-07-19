@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('title')
-Tatweer Misr | Form Page
+Tatweer Misr | Form
 @endsection
 
 @section('page-style')

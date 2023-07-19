@@ -42,9 +42,8 @@ class contactMail extends Mailable
         return new Content(
             view: 'contact-message',
             with: [
-                'dataMail' => $this->dataMail,
                 'code' => $this->code,
-            ],
+            ]
         );
     }
 
@@ -58,4 +57,5 @@ class contactMail extends Mailable
         return [];
     }
 }
+
 

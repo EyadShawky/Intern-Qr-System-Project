@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('title')
-    Tatweer misr
+Tatweer Misr | QR
 @endsection
 
 @section('page-style')

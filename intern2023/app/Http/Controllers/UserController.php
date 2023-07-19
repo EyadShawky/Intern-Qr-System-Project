@@ -58,11 +58,13 @@ class UserController extends Controller
             $user_code->qr_code = request('qrCode');
             $user_code->save();
 
-        $code = userCode::select('code')->get();
-        // Send email
-        // Mail::to($request->input('Email'))
-        //     ->send(new contactMail($dataMail, $code));
+            // $userCodes = userCode::select('code');
+
             
+                // Send email
+                Mail::to($request->input('Email'))
+                    ->send(new contactMail($dataMail, $user_code->code));
+          
         return redirect('http://127.0.0.1:8000/qr?q='.$user_id);
     }
 }

@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('title')
-Tatweer Misr Admin
+Tatweer Misr | Admin QR
 @endsection
 
 @section('page-style')
