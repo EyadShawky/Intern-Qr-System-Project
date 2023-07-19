@@ -12,8 +12,8 @@ Tatweer Misr | Admin
 
     <div class="container">
         <form action="" id="sub" class="search-form">
-            <input class="search-input" id="natIdPass" type="text" placeholder="National ID / Passport" name="serach" required>
-            <!-- <button type="submit"><img src="../image/search.png"></button> -->
+            <input class="search-input" autocomplete="off" id="natIdPass" type="text" placeholder="National ID / Passport" name="serach" required>
+            <button type="submit" disabled><img src="../image/search.png"></button>
         </form>
     </div>
 
