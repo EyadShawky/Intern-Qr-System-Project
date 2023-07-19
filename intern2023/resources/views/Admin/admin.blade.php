@@ -6,79 +6,13 @@
 
 @section('content')
 
-<!-- 
-    <div class="body">
-    <form>
-        <div class="form-group">
-            <label for="from-group-inputs"></label>
-            <input type="text" class="form-control" id="from-group-inputs" autocomplete="off" placeholder="National ID / Passport" required>
-    
-            <button id="sub" type="submit" class="btn-find">Find</button>
-        </div>
-    </form>
-    </div> -->
-
-   
-
-
-
-    <div class="body">
-        
-        
-        <div class="container">
-            
-        <form class="form-admin">
-
-            <div class="header">
-                <h1>Search for a user</h1>
-            </div>
-            <div class="form-group">
-                <div class="form-group-admin">
-                    <label class="label" for="natIdPass">Natioanl ID / Passport</label>
-                    <input class="input-admin" type="email" class="" id="natIdPass" placeholder="Natioanl ID / Passport *" required>
-                    
-                </div>
-            
-                <button type="submit" class="btn-admin ">search</button>
-            </div>
-            
+    <div class="container">
+        <form action="" class="search-form">
+            <input class="search-input" type="text" placeholder="National ID / Passport" name="serach" required>
+            <button type="submit"><img src="../image/download__2_-removebg-preview.png"></button>
         </form>
-        </div>
-        
     </div>
     
-
-
-    <!-- <section>
-        <form>
-            <div class="form-all-admin">
-            <div class="header-admin">
-            <h1 class="admin-header"> Find client by ID</h1>
-        </div>
-        <div class="input-group admin">
-                <div class="input-group-prepend">
-                    <span class="" id="">National ID / Passport *</span>
-                </div>
-
-                <input type="text" class="form-control-admin" required>
-                </div>
-        
-            <button type="submit" class="btn-submit-admin">Find</button>
-            </div>
-       
-        </form>
-    </section>
-    -->
-
-    <!-- <div class="container">
-        <form action="">
-            <input type="text" placeholder="National ID / Passport" required>
-            <button type="submit">Serach</button>
-        </form>
-    </div> -->
-
-
-
 
 @endsection
 
