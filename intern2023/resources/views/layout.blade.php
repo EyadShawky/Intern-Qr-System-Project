@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="/images.png"/>
     <link rel="stylesheet" type="text/css" href="{{ url('css/welcome.css') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/download.png')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/admin.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url('css/admin.css') }}"> -->
 
     @yield('page-style')
 </head>

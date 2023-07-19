@@ -4,11 +4,15 @@
     Tatweer misr
 @endsection
 
+@section('page-style')
+<link rel="stylesheet" type="text/css" href="{{ url('css/admin.css') }}">
+@endsection
+
 @section('content')
 
     <div class="container">
-        <form action="" class="search-form">
-            <input class="search-input" type="text" placeholder="National ID / Passport" name="serach" required>
+        <form action="" id="sub" class="search-form">
+            <input class="search-input" id="natIdPass" type="text" placeholder="National ID / Passport" name="serach" required>
             <button type="submit"><img src="../image/download__2_-removebg-preview.png"></button>
         </form>
     </div>
