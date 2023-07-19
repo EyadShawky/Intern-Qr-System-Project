@@ -80,7 +80,17 @@ else{
                 ');
     }
     else{
-        echo 'not found';
+        echo('
+        <div class = "container upper">
+            <h1>User Not Found.</h1>
+        </div>
+        <div class = "container lower">
+        <br><br>
+            <h2>Please register using this <a href="http://127.0.0.1:8000">link</a>.</h2>
+            <br><br>
+            <h2>Or search again using this <a href="http://127.0.0.1:8000/admin/pdRkAAT+XxepOb8drasiSw==">link</a>.</h2>
+        </div>
+        ');
     }
 }
 ?>
