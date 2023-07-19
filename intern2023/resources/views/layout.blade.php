@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="/images.png"/>
     <link rel="stylesheet" type="text/css" href="{{ url('css/welcome.css') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/download.png')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/admin.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url('css/admin.css') }}"> -->
 
     @yield('page-style')
 </head>
@@ -27,6 +27,8 @@
 <div  ></div> @yield('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script>      
   function checkIfYes() {

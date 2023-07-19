@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\contactMail;
 use App\Models\userCode;
 use App\Models\UserData;
-use FFI\Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
     public function index()
     {
-        // $userData = UserData::all();
         return view('Home.home');
     }
 
@@ -32,7 +28,7 @@ class UserController extends Controller
         
         UserData::create($request->all(), $dataMail);
 
-        // $user_id = request('id');
+        
         $userCodeDB = userCode::all();
         if($userCodeDB->isEmpty()){
             $code = 'A-001';
@@ -66,7 +62,6 @@ class UserController extends Controller
         // Mail::to($request->input('Email'))
         //     ->send(new ContactMail($dataMail, $userCode));
         // return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
-        // return redirect()->route('Home.qr', ['q' => $user_code]);
         return redirect('http://127.0.0.1:8000/qr?q='.$user_id);
     }
 }

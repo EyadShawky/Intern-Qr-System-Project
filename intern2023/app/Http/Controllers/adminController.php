@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class adminController extends Controller
 {
    public function index(){
-      $userData = userData::all();
-      return view('Admin.admin', compact('userData'));
+      $userCode = userCode::all();
+      return view('Admin.admin', compact('userCode'));
    }
    public function adminQR(){
       $userCode = userCode::all();
