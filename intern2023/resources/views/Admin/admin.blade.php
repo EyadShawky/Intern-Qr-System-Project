@@ -46,38 +46,23 @@
         </div>
         
     </div>
-    
 
-
-    <!-- <section>
-        <form>
-            <div class="form-all-admin">
-            <div class="header-admin">
-            <h1 class="admin-header"> Find client by ID</h1>
-        </div>
-        <div class="input-group admin">
-                <div class="input-group-prepend">
-                    <span class="" id="">National ID / Passport *</span>
-                </div>
-
-                <input type="text" class="form-control-admin" required>
-                </div>
-        
-            <button type="submit" class="btn-submit-admin">Find</button>
-            </div>
-       
-        </form>
-    </section>
-    -->
-
-    <!-- <div class="container">
-        <form action="">
-            <input type="text" placeholder="National ID / Passport" required>
-            <button type="submit">Serach</button>
-        </form>
-    </div> -->
-
-
+    <table class="table table-dark container">
+    <thead>
+    <tr>
+        <th scope="col">National / Passport ID</th>
+        <th scope="col">Code</th>
+    </tr>
+    </thead>
+    @foreach($userCode as $user)
+        <tbody>
+        <tr>
+            <th scope="row">{{$user->user_id}}</th>
+            <th scope="row">{{$user->code}}</th>
+        </tr>
+        </tbody>
+    @endforeach
+</table>
 
 
 @endsection
