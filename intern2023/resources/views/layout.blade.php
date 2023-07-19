@@ -49,6 +49,10 @@
   }
 }
 </script>
+<script>
+    let logo = document.getElementById('logo');
+    logo.src = "https://tatweermisr.com/images/logo-white.svg";
+</script>
 @yield('scripts')
 </body>
 

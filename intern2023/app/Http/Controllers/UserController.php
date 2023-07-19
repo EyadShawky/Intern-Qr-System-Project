@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\contactMail;
 use App\Models\userCode;
 use App\Models\UserData;
 use Illuminate\Http\Request;
@@ -57,11 +58,11 @@ class UserController extends Controller
             $user_code->qr_code = request('qrCode');
             $user_code->save();
 
-        $userCode = userCode::select('code')->get();
+        $code = userCode::select('code')->get();
         // Send email
         // Mail::to($request->input('Email'))
-        //     ->send(new ContactMail($dataMail, $userCode));
-        // return back()->with('message_send', 'Your Message Has Been Sent Successfully!');
+        //     ->send(new contactMail($dataMail, $code));
+            
         return redirect('http://127.0.0.1:8000/qr?q='.$user_id);
     }
 }
