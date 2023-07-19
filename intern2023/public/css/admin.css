@@ -5,15 +5,18 @@
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+body{
+    overflow: auto;
+}
 
 .container{
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding: 5%;
     align-items: center;
     justify-content: center;
     align-content: center;
-    margin-left: 325px ;
+    /* margin-left: 325px ; */
 }
 
 .search-form{
@@ -25,6 +28,7 @@
     border-radius: 60px;
     padding: 10px 20px;
     backdrop-filter: blur(4px) saturate(180%);
+    margin: 0 auto;
 }
 
 .search-form input{
@@ -52,4 +56,19 @@
 
 .search-form button img{
     width: 35px;
+}
+
+.table{
+    width: 60%;
+    min-width: 300px;
+}
+.table-row:hover{
+    background-color: #95999c;
+    color: #454d55;
+    cursor: pointer;
+}
+
+.table a{
+    text-decoration: none;
+    color: inherit;
 }
