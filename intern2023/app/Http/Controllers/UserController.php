@@ -25,10 +25,10 @@ class UserController extends Controller
             'Email' => 'required|email|unique:users',
         ]);
 
-        
-        
-        UserData::create($request->all(), $dataMail);
-
+        $validator = UserData::create($request->all(), $dataMail);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
         
         $userCodeDB = userCode::all();
         if($userCodeDB->isEmpty()){

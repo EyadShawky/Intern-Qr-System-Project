@@ -17,6 +17,14 @@ Tatweer Misr | Form
         <form id="form" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-all">
+                @error('id')
+                <div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+                    <strong>{{ $message }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @enderror
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">First name *</span>
@@ -41,28 +49,25 @@ Tatweer Misr | Form
                     </div>
                 </div>
                 <div class="input-group" id="extraId" name="extraId" style="display: none">
+
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">National ID *</span>
                     </div>
-                    <input name="id" type="number" class="form-control" id="natId" required 
-                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    type = "number" maxlength = "14">
+                    <input name="id" type="number" class="form-control" id="natId" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="14">
                 </div>
                 <div class="input-group" id="extra" name="extra" style="display: none">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">Passport *</span>
                     </div>
 
-                    <input name="id" type="text" class="form-control" id="passport" required disabled maxlength = "9">
+                    <input name="id" type="text" class="form-control" id="passport" required disabled maxlength="9">
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="">Telephone number *</span>
                     </div>
 
-                    <input name="Phone" type="number" class="form-control" required 
-                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                    type = "number" maxlength = "11">
+                    <input name="Phone" type="number" class="form-control" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="11">
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -70,7 +75,7 @@ Tatweer Misr | Form
                     </div>
 
                     <input name="Email" type="email" class="form-control" required>
-                    <input name="qrCode" type="text" hidden id="qrCode">
+                    <input name="qrCode" type="text" class="form-control" hidden id="qrCode">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn-submit">Submit</button>
@@ -82,16 +87,16 @@ Tatweer Misr | Form
 
 <section class="container">
     <div class="container-img-admin">
-    <img src="../image/Tatweer-Misr.jpg" />
+        <img src="../image/Tatweer-Misr.jpg" />
         <div class="textStyle">
-        <p> Tatweer Misr</p>
+            <p> Tatweer Misr</p>
         </div>
     </div>
 
     <div class="container-img-admin-lf">
-    <img src="../image/Tatweer-Misr.jpg" />
+        <img src="../image/Tatweer-Misr.jpg" />
         <div class="textStyle">
-           <p> Tatweer Misr</p>
+            <p> Tatweer Misr</p>
         </div>
     </div>
 
@@ -120,9 +125,5 @@ Tatweer Misr | Form
             document.getElementById('form').submit();
         }
     })
-    
-   
-
-
 </script>
 @endsection
