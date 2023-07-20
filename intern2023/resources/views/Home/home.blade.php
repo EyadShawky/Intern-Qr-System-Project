@@ -55,7 +55,7 @@ Tatweer Misr | Form
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="">Telephone number </span>
+                        <span class="input-group-text" id="myInput" min="0" max="3" maxlength="5">Telephone number </span>
                     </div>
 
                     <input name="Phone" type="number" class="form-control" required>
@@ -76,6 +76,24 @@ Tatweer Misr | Form
 </section>
 
 
+<section class="container">
+    <div class="container-img-admin">
+    <img src="../image/Tatweer-Misr.jpg" />
+        <div class="textStyle">
+        <p> Tatweer Misr</p>
+        </div>
+    </div>
+
+    <div class="container-img-admin-lf">
+    <img src="../image/Tatweer-Misr.jpg" />
+        <div class="textStyle">
+           <p> Tatweer Misr</p>
+        </div>
+    </div>
+
+</section>
+
+
 @endsection
 
 @section('scripts')
@@ -88,15 +106,19 @@ Tatweer Misr | Form
         event.preventDefault();
         let id = document.getElementById('natId').value;
         let pass = document.getElementById('passport').value;
-        if(id){
-            let qrcode = new QRCode("qrCode", "http://127.0.0.1:8000/qr?q="+id);
+        if (id) {
+            let qrcode = new QRCode("qrCode", "http://127.0.0.1:8000/qr?q=" + id);
             document.getElementById('qrCode').value = qrcode._el.childNodes[0].toDataURL();
             document.getElementById('form').submit();
-        }else if(pass){
-            let qrcode = new QRCode("qrCode", "http://127.0.0.1:8000/qr?q="+pass);
+        } else if (pass) {
+            let qrcode = new QRCode("qrCode", "http://127.0.0.1:8000/qr?q=" + pass);
             document.getElementById('qrCode').value = qrcode._el.childNodes[0].toDataURL();
             document.getElementById('form').submit();
         }
     })
+    
+   
+
+
 </script>
 @endsection
