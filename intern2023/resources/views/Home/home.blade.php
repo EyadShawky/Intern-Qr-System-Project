@@ -19,20 +19,20 @@ Tatweer Misr | Form
             <div class="form-all">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="">First name</span>
+                        <span class="input-group-text" id="">First name *</span>
                     </div>
                     <input name="Fname" type="text" class="form-control" required>
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="">Last name </span>
+                        <span class="input-group-text" id="">Last name *</span>
                     </div>
                     <input name="Lname" type="text" class="form-control" required>
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
 
-                        <span class="input-group-text" id="">National ID / Passport </span>
+                        <span class="input-group-text" id="">National ID / Passport *</span>
                         <select onchange='checkIfYes()' class="forms-control" id="defect" name="defect">
                             <option value="" disabled selected>National ID / Passport?</option>
                             <option id="id" value="id">National ID</option>
@@ -42,27 +42,31 @@ Tatweer Misr | Form
                 </div>
                 <div class="input-group" id="extraId" name="extraId" style="display: none">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="">National ID </span>
+                        <span class="input-group-text" id="">National ID *</span>
                     </div>
-                    <input name="id" type="number" class="form-control" id="natId" required>
+                    <input name="id" type="number" class="form-control" id="natId" required 
+                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type = "number" maxlength = "14">
                 </div>
                 <div class="input-group" id="extra" name="extra" style="display: none">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="">Passport </span>
+                        <span class="input-group-text" id="">Passport *</span>
                     </div>
 
-                    <input name="id" type="text" class="form-control" id="passport" required disabled>
+                    <input name="id" type="text" class="form-control" id="passport" required disabled maxlength = "9">
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="myInput" min="0" max="3" maxlength="5">Telephone number </span>
+                        <span class="input-group-text" id="">Telephone number *</span>
                     </div>
 
-                    <input name="Phone" type="number" class="form-control" required>
+                    <input name="Phone" type="number" class="form-control" required 
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type = "number" maxlength = "11">
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="">Email</span>
+                        <span class="input-group-text" id="">Email *</span>
                     </div>
 
                     <input name="Email" type="email" class="form-control" required>
