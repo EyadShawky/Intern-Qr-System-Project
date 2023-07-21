@@ -12,8 +12,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $userCodeDB = userCode::all();
-        $userDataDB = UserData::all();
+        $userCodeDB = userCode::orderBy('created_at', 'asc')->get();
+        $userDataDB = UserData::orderBy('created_at', 'asc')->get();
         return view('Home.home', compact('userCodeDB', 'userDataDB'));
     }
 

@@ -160,7 +160,6 @@ Tatweer Misr | Form
         let userCode = <?php echo $userCodeDB?>;
         if(id){
             if (registeredID.includes(id)) {
-                console.log(id);
                 for (var i = 0; i < userData.length; i++) {
                     if (userData[i].id == id) {
                         popName = userData[i].Fname;
@@ -181,8 +180,8 @@ Tatweer Misr | Form
             }
         }else if(pass){
             if (registeredID.includes(pass)) {
-                for (var i = 0; i < userData.length; i++) {
-                    if (userData[i].id == pass) {
+                for (var i = 0; i < userCode.length; i++) {
+                    if (userCode[i].user_id == pass) {
                         popName = userData[i].Fname;
                         break;
                     }
