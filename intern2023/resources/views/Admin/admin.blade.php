@@ -21,25 +21,50 @@ Tatweer Misr | Admin
     <thead>
     <tr>
         <th scope="col">National / Passport ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
         <th scope="col">Code</th>
     </tr>
     </thead>
-    @foreach($userCode as $user)
+    <?php
+    for ($i = 0; $i < count($userCode); $i++) {
+        echo (
+            '<tbody>
+                <tr class="table-row">
+                    <td scope="row">
+                        '.$userCode[$i]["user_id"].'
+                    </td>
+                    <td scope="row">
+                        '.$userData[$i]["Fname"].' '.$userData[$i]["Lname"].'
+                    </td>
+                    <td scope="row">
+                        '.$userData[$i]["Phone"].'
+                    </td>
+                    <td scope="row">
+                        '.$userData[$i]["Email"].'
+                    </td>
+                    <td scope="row">
+                        '.$userCode[$i]["code"].'
+                    </td>
+                </tr>
+            </tbody>'
+        );
+    }
+    ?>
+    <!-- @foreach($userCode as $user)
         <tbody>
             <tr class="table-row">
                 <td scope="row">
-                    <!-- <a href="{{ url('admin/pdRkAAT+XxepOb8drasiSw==/qr?id=' . $user['user_id']) }}"> -->
                         {{$user["user_id"]}}
-                    <!-- </a> -->
                 </td>
                 <td scope="row">
-                    <!-- <a href="{{ url('admin/pdRkAAT+XxepOb8drasiSw==/qr?id=' . $user['user_id']) }}"> -->
                         {{$user["code"]}}
-                    <!-- </a> -->
                 </td>
             </tr>
         </tbody>
-    @endforeach
+    @endforeach -->
+
 </table>
 
 

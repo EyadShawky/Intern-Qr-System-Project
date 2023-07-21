@@ -12,31 +12,19 @@ Tatweer Misr | Admin QR
 
 <?php
 
-if (!isset($_GET['id'])) {
-    echo 'Not authorized';
-}
-else{
-    $id= $_GET['id'];
-    $desiredCode = null;
-    $desiredUser = null;
-    foreach ($userCode as $row) {
-        if ($row['user_id'] == $id) {
-            $desiredCode = $row;
+if (isset($_GET['id'])){
+    $i =0;
+    for($i; $i<count($userCode); $i++){
+        if($userCode[$i]['user_id'] == $id){
             break;
         }
     }
-    foreach ($userData as $row) {
-        if ($row['id'] == $id) {
-            $desiredUser = $row;
-            break;
-        }
-    }
-    if($desiredCode && $desiredUser){
+    if($i<count($userCode)){
         echo('
         <div class = "container upper">
-            <h2>Name: '.$desiredUser['Fname'].' '.$desiredUser['Lname'].'</h2>
-            <h2>Number: '.$desiredCode['code'].'</h2>
-            <img src="'.$desiredCode['qr_code'].'" width=120 height=120">
+            <h2>Name: '.$userData[$i]['Fname'].' '.$userData[$i]['Lname'].'</h2>
+            <h2>Number: '.$userCode[$i]['code'].'</h2>
+            <img src="'.$userCode[$i]['qr_code'].'" width=120 height=120">
         </div>
         <div class="container lower">
             <table class="table">
@@ -44,33 +32,33 @@ else{
                 <tr>
                 <th scope="col">First</th>
                 <td class="fname">
-                '.$desiredUser['Fname'].'
+                '.$userData[$i]['Fname'].'
                 </td>
                 </tr>
                 <tr>
                 <th scope="col">Last</th>
                 <td>
-                '.$desiredUser['Lname'].'
+                '.$userData[$i]['Lname'].'
                 </td>
                 </tr>
                 <tr>
                 <th scope="col">ID</th>
                 <td>
-                '.$desiredUser['id'].'
+                '.$userCode[$i]['user_id'].'
                 </td>
                 </tr>
                 <tr>
                 <th scope="col">Phone</th>
                 
                 <td>
-                '.$desiredUser['Phone'].'
+                '.$userData[$i]['Phone'].'
                 </td>
                 </tr>
 
                 <tr>
                 <th scope="col">E-mail</th>
                     <td>
-                    '.$desiredUser['Email'].'
+                    '.$userData[$i]['Email'].'
                     </td>
                     </tr>
                 </tr>
@@ -92,6 +80,18 @@ else{
         </div>
         ');
     }
+}else{
+    echo('
+    <div class = "container upper">
+        <h1>ID Not Found.</h1>
+    </div>
+    <div class = "container lower">
+    <br><br>
+        <h2>Please register using this <a href="http://127.0.0.1:8000">link</a>.</h2>
+        <br><br>
+        <h2>Or search again using this <a href="http://127.0.0.1:8000/admin/pdRkAAT+XxepOb8drasiSw==">link</a>.</h2>
+    </div>
+    ');
 }
 ?>
 

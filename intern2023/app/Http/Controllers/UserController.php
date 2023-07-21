@@ -12,7 +12,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('Home.home');
+        $userCodeDB = userCode::all();
+        $userDataDB = UserData::all();
+        return view('Home.home', compact('userCodeDB', 'userDataDB'));
     }
 
     public function store(Request $request)
@@ -26,9 +28,9 @@ class UserController extends Controller
         ]);
 
         $validator = UserData::create($request->all(), $dataMail);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        }
+        // if ($validator->fails()) {
+        //     return redirect()->back()->withErrors($validator);
+        // }
         
         $userCodeDB = userCode::all();
         if($userCodeDB->isEmpty()){
@@ -62,8 +64,8 @@ class UserController extends Controller
 
             
                 // Send email
-                Mail::to($request->input('Email'))
-                    ->send(new contactMail($dataMail, $user_code->code));
+                // Mail::to($request->input('Email'))
+                //     ->send(new contactMail($dataMail, $user_code->code));
           
         return redirect('http://127.0.0.1:8000/qr?q='.$user_id);
     }

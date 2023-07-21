@@ -11,39 +11,21 @@ Tatweer Misr | QR
 @section('content')
 
 <?php
-
 if (isset($_GET['q'])) {
-    $id= $_GET['q'];
-    $desiredCode = null;
-    $desiredUser = null;
-    foreach ($userCode as $row) {
-        if ($row['user_id'] == $id) {
-            $desiredCode = $row;
+    $i =0;
+    for($i; $i<count($userCode); $i++){
+        if($userCode[$i]['user_id'] == $id){
             break;
         }
     }
-    foreach ($userData as $row) {
-        if ($row['id'] == $id) {
-            $desiredUser = $row;
-            break;
-        }
-    }
-    if($desiredCode){
-        if($desiredUser){
+    if($i<count($userCode)){
         echo('
         <div class = "container upper">
-            <h1>Hello, '.$desiredUser['Fname'].'</h1>
-        </div>');
-        }else{
-        echo('
-        <div class = "container upper">
-            <h1>Welcome</h1>
-        </div>');
-        }
-        echo('
+            <h1>Hello, '.$userData[$i]['Fname'].'</h1>
+        </div>
         <div class = "container lower">
-            <h2>Your number is<br>'.$desiredCode['code'].'</h2>
-            <img src="'.$desiredCode['qr_code'].'" width=120 height=120">
+            <h2>Your number is<br>'.$userCode[$i]['code'].'</h2>
+            <img src="'.$userCode[$i]['qr_code'].'" width=120 height=120">
         </div>
         ');
     }
