@@ -7,29 +7,33 @@ use App\Models\userCode;
 use App\Models\UserData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
 class UserController extends Controller
 {
+    
     public function index()
     {
         return view('Home.home');
     }
+    
 
     public function store(Request $request)
     {
-        $dataMail = $this->validate($request, [
-            'id' => 'nullable|string|max:14|min:9',
+        $inputs = $request->all();
+        $dataMail = validator($inputs, [
+            'id' => 'required|string|max:14|min:9',
             'Fname' => 'required|string|max:255',
             'Lname' => 'required|string|max:255',
             'Phone' => 'required|string|min:10|max:15',
             'Email' => 'required|email|unique:users',
         ]);
 
-        $validator = UserData::create($request->all(), $dataMail);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
+      
+        if ($dataMail->fails()) {
+            return redirect()->back()->withErrors($dataMail);
         }
-        
+        UserData::create($request->all(), $dataMail);
+
+
         $userCodeDB = userCode::all();
         if($userCodeDB->isEmpty()){
             $code = 'A-001';
@@ -62,8 +66,8 @@ class UserController extends Controller
 
             
                 // Send email
-                Mail::to($request->input('Email'))
-                    ->send(new contactMail($dataMail, $user_code->code));
+                // Mail::to($request->input('Email'))
+                //     ->send(new contactMail($dataMail, $user_code->code));
           
         return redirect('http://127.0.0.1:8000/qr?q='.$user_id);
     }
