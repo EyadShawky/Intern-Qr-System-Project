@@ -65,7 +65,7 @@ body{
 .table-row:hover{
     background-color: #95999c;
     color: #454d55;
-    cursor: pointer;
+    cursor: default;
 }
 
 .table a{
