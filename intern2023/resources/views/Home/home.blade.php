@@ -84,14 +84,16 @@ Tatweer Misr | Form
             </section>
 
         </div>
+        @foreach($dashboards as $dashboard)
         <div class="col">
             <div class="container-img-admin">
-                <img src="image/Tatweer-Misr.jpg" class="img-fluid" alt="Tatweer-Misr.jpg">
+                <img src="{{asset(($dashboard->img))}}" class="img-fluid" alt="Tatweer-Misr.jpg">
                 <div class="textStyle">
-                    <p> Tatweer Misr</p>
+                    <p> {{$dashboard->title}}</p>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 
 
