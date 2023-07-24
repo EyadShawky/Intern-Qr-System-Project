@@ -10,13 +10,16 @@ Tatweer Misr | Admin
 
 @section('content')
 
-    <div class="container">
+    <div class="container search-container">
         <form action="" id="sub" class="search-form">
             <input class="search-input" autocomplete="off" id="natIdPass" type="text" placeholder="National ID / Passport" name="serach" required>
             <button type="submit" disabled><img src="../image/search.png"></button>
         </form>
+        <div>
+            <button id="downloadXL" class="btn btn-success">Download Excel</button>
+            <button id="downloadPDF" class="btn btn-danger">Download PDF</button>
+        </div>
     </div>
-
     <table class="table table-dark container">
     <thead>
     <tr>
