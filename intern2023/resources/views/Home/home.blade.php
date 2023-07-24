@@ -162,9 +162,36 @@ Tatweer Misr | Form
         logo.src = "https://tatweermisr.com/images/logo-white.svg";
     </script>
     <script>
-
     function valid(){
-        
+        const selectElement = document.getElementById('defect');
+        const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+        const natIdInput = document.getElementById('natId');
+        const passportInput = document.getElementById('passport');
+        const phoneInput = document.getElementsByName('Phone')[0];
+        const errorMsgDiv = document.getElementById('error-div');
+        const errorMsg = document.getElementById('error-msg');
+        // Clear previous error message, if any
+        errorMsg.textContent = '';
+        errorMsgDiv.style.display = 'none';
+        if (selectedOption === 'id' && natIdInput.value.length !== 14) {
+            // Second option selected, but ID input length is not 14
+            errorMsg.textContent = 'National ID should be 14 digits.';
+            errorMsgDiv.style.display = 'block';
+            return false;
+        } else if (selectedOption === 'pass' && passportInput.value.length !== 9) {
+            // Third option selected, but Passport input length is not 9
+            errorMsg.textContent = 'Passport should be 9 characters.';
+            errorMsgDiv.style.display = 'block';
+            return false;
+        } else if (phoneInput.value.length !== 11) {
+            // Phone number should be at least 11 digits
+            errorMsg.textContent = 'Phone number should be at least 11 digits.';
+            errorMsgDiv.style.display = 'block';
+            return false;
+        }else{
+
+            return true;
+        }
     }
     
     document.getElementById('form').addEventListener('submit', function(event) {
@@ -232,10 +259,9 @@ Tatweer Misr | Form
     function validate()
     {
     var ddl = document.getElementById("defect");
-    var selectedValue = ddl.options[ddl.selectedIndex].value;
-        if (selectedValue !== "natId" || selectedValue !== "pass")
+    // var selectedValue = ddl.options[ddl.selectedIndex].value;
+    if (ddl.selectedIndex == 0)
     {
-       console.log("not valid");
        alert("National ID / passport must be filled");
     }
     }
