@@ -18,10 +18,16 @@ Tatweer Misr | Dashboard Admin
             Dashboard
         </h3>
 
-
-        <a class="btn btn-danger d-flex justify-content-center align-items-center" href="{{ url("/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/create") }}">
-            Create View
-        </a>
+        <?php
+            if($dashboards->count() <1){
+                echo('
+                    
+            <a id="create" class="btn btn-danger d-flex justify-content-center align-items-center" href="{{ url("/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/create") }}">
+                Create View
+            </a>
+                ');
+            }
+        ?>
 
     </div>
 
@@ -54,3 +60,5 @@ Tatweer Misr | Dashboard Admin
     </table>
 </div>
 @endsection
+
+@section("scripts")

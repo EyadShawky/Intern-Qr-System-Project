@@ -62,6 +62,12 @@ Tatweer Misr | Form
                                 </button>
                             </div>
                             @enderror
+                            <div id="error-div" class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+                                <strong id="error-msg"></strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="">First name *</span>
@@ -141,13 +147,29 @@ Tatweer Misr | Form
     @endsection
 
     @section('scripts')
+    
+
+
+
+
+
+
+
+
+
     <script>
         let logo = document.getElementById('logo');
         logo.src = "https://tatweermisr.com/images/logo-white.svg";
     </script>
     <script>
+
+    function valid(){
+        
+    }
+    
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
+        if(!valid()) return;
         let id = document.getElementById('natId').value;
         let pass = document.getElementById('passport').value;
         var registeredID = <?php echo json_encode($userCodeDB->pluck('user_id')); ?>;

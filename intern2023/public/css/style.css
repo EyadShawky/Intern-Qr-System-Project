@@ -35,3 +35,8 @@ background-color: #EDEDED;
 border-radius: 18px;
 color: #121212 !important;
 }
+
+
+.alert-dismissible{
+    display: none;
+}
