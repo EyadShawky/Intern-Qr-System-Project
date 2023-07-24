@@ -1,38 +1,39 @@
-.section-user{
+.section-user {
     position: absolute;
     top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%; 
+    width: 100%;
     background-color: 121212;
     background-position: center;
     background-size: cover;
 }
 
-.form-group{
+.form-group {
     margin: auto;
     padding: 20px;
-    size: 50px; 
+    size: 50px;
     align-content: center;
     align-items: center;
-    text-align: center; 
+    text-align: center;
     color: #171717;
     border-radius: 30px;
     border-color: #DA0037;
     box-sizing: border-box;
-    border-radius:10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
 }
-.input-group-text{
+
+.input-group-text {
     width: 180px;
     color: #171717;
     background-color: #EDEDED;
-    border-radius:10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
 
 }
 
-.form-control{
+.form-control {
     padding: 20px;
     background-color: #ffff;
     align-items: center;
@@ -42,10 +43,10 @@
     text-size-adjust: 20px;
     box-sizing: border-box;
     width: 300px;
-    border-radius:0 10px 10px 0 !important;
+    border-radius: 0 10px 10px 0 !important;
 }
 
-.form-control:focus{
+.form-control:focus {
     padding: 20px;
     background-color: #fff;
     align-items: center;
@@ -55,15 +56,15 @@
     text-size-adjust: 20px;
     box-sizing: border-box;
     width: 300px;
-    border-radius:0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
 }
 
-.input-group{
+.input-group {
     width: 500px;
     padding: 10px;
 }
 
-.btn-submit{
+.btn-submit {
     margin: auto;
     color: #EDEDED;
     size: 100px;
@@ -75,13 +76,13 @@
     transition: 0.3s;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
     color: #EDEDED;
     background-color: #171717;
     border-color: #ededed;
 }
 
-.btn-submit:focus{
+.btn-submit:focus {
     color: #EDEDED;
     background-color: #DA0037;
     border-color: #DA0037;
@@ -89,45 +90,39 @@
 }
 
 
-.header{
+.header {
     text-align: center;
     color: #DA0037;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-} 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 
-.container-img-admin{
-
+.container-img-admin {
     border-radius: 10px;
-    top: 62.5px;    
+    top: 62.5px;
     color: #171717;
 }
 
-.container-img-admin img{
-    position: relative;
-    top: 11px;
-    height: 275px !important;
+.container-img-admin img {
     border-radius: 10px;
     z-index: -999999999;
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
-    from(rgba(23,23,23,1)), to(rgba(237,237,237,0)));
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
+            from(rgba(23, 23, 23, 1)), to(rgba(237, 237, 237, 0)));
 }
 
-
-
-.textStyle{
+.textStyle {
     z-index: 9999999999;
     color: #ffffff;
     border-radius: 10px;
     text-align: center;
-   display: flex;
-   justify-content: center;
-   margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
     font-weight: bolder !important;
     font-size: 24.5px;
 }
 
-.container-img-admin-lf{
+.container-img-admin-lf {
     position: relative;
     border-radius: 10px;
     left: 810px;
@@ -137,18 +132,18 @@
     height: 306px;
 }
 
-.alert{
-   width:  96%!important;
-   border-radius: 10px;
-   left: 10px;
-   text-align: center;
+.alert {
+    width: 96% !important;
+    border-radius: 10px;
+    left: 10px;
+    text-align: center;
 }
 
-.form-home{
+.form-home {
     /* background-color: #DA0037; */
     position: relative;
     top: 30px;
-    width: 100%; 
+    width: 100%;
     background-position: center;
     background-size: cover;
     padding: 30px;

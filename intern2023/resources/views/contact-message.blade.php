@@ -14,7 +14,7 @@
 
     <div class="container align-center">
 
-        <h1>Dear customer,</h1>
+        <h1>Dear  {{$dataMail['Fname']}},</h1>
         <h4>We hope this message finds you well! We wanted to reach out to you regarding your recent purchase with us and provide you with your unique code. We value your business and want to ensure you have all the necessary information.</h4>
 
         <h2>
