@@ -1,7 +1,7 @@
 @extends ('adminLayout')
 
 @section('title')
-    Tatweer misr Admin
+    Tatweer misr | Form Data
 @endsection
 
 @section('content')
