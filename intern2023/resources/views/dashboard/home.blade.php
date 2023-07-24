@@ -21,8 +21,8 @@ Tatweer Misr | Dashboard Admin
         <?php
             if($dashboards->count() <1){
                 echo('
-                    
-            <a id="create" class="btn btn-danger d-flex justify-content-center align-items-center" href="{{ url("/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/create") }}">
+                     
+            <a id="create" class="btn btn-danger d-flex justify-content-center align-items-center" href="http://127.0.0.1:8000/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/create">
                 Create View
             </a>
                 ');
