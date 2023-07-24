@@ -10,7 +10,7 @@ Tatweer Misr | Dashboard Admin
 @endsection
 
 @section('content')
-<form action="{{url('/admin/pdRkAAT+XxepOb8drasiSw==/dashboard')}}" method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data">
     @csrf
         <div class="container">
             <div class="input-group mb-3 w-75 m-auto">
