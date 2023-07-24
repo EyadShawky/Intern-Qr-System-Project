@@ -89,7 +89,7 @@ Tatweer Misr | Form
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="">National ID *</span>
                                 </div>
-                                <input name="id" type="number" class="form-control" id="natId" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="14">
+                                <input name="id" type="number" class="form-control" id="natId" required min="14" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="14">
                             </div>
                             <div class="input-group" id="extra" name="extra" style="display: none">
                                 <div class="input-group-prepend">
@@ -114,7 +114,7 @@ Tatweer Misr | Form
                                 <input name="qrCode" type="text" class="form-control" hidden id="qrCode">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn-submit">Submit</button>
+                                <button type="submit" onclick="validate()" class="btn-submit">Submit</button>
                             </div>
                     </form>
                 </div>
@@ -205,6 +205,17 @@ Tatweer Misr | Form
     }
     function closePopup() {
         document.getElementById("popup").style.display = "none";
+    }
+
+    function validate()
+    {
+    var ddl = document.getElementById("defect");
+    var selectedValue = ddl.options[ddl.selectedIndex].value;
+        if (selectedValue !== "natId" || selectedValue !== "pass")
+    {
+       console.log("not valid");
+       alert("National ID / passport must be filled");
+    }
     }
 </script>
     @endsection
