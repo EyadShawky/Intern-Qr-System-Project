@@ -16,15 +16,19 @@ class AuthController extends Controller
     public function register(Request $request){
         $data = $request->validate([
             'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
+            'address' => 'required|string|max:255',
             'password' =>'required|string|min:5|max:30|confirmed',
         ]);
 
         $data['password'] = bcrypt($data['password']);
-        $data['role_id'] = 2;
+        $data['role_id'] = Role::where('id' , 3)->first()->id;
         $user = User::create($data);
         Auth::login($user);
-        return redirect( url('/admin/pdRkAAT+XxepOb8drasiSw==/dashboard') );
+        return redirect( url('/admin/categories') );
     }
+
+
 
     public function login(Request $request){
         $data = $request->validate([

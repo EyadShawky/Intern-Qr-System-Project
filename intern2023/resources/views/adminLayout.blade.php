@@ -26,7 +26,7 @@
             <img id="logo" src="/Tatwwer-Misr.jpg" class="d-inline-block align-top" alt="Tatwwer-Misr-logo">
         </a>
     </nav>
-    @auth
+
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav m-auto ">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </nav>
-    @endauth
+
 
     <div></div> @yield('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
