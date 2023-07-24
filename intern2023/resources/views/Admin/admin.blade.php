@@ -9,6 +9,9 @@ Tatweer Misr | Form Data
 @endsection
 
 @section('content')
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.15/jspdf.plugin.autotable.min.js"></script>
 
     <div class="container search-container">
         <form action="" id="sub" class="search-form">
@@ -16,8 +19,8 @@ Tatweer Misr | Form Data
             <button type="submit" disabled><img src="../image/search.png"></button>
         </form>
         <div>
-            <button id="downloadPDF" class="btn btn-danger">Download PDF</button>
-            <button id="downloadXL" class="btn btn-outline-success">Download Excel</button>
+            <button id="exportExcelBtn" class="btn btn-success">Download Excel</button>
+            <button id="exportPdfBtn"  class="btn btn-danger">Download PDF</button>
         </div>
     </div>
     <table class="table table-dark container">
@@ -28,8 +31,6 @@ Tatweer Misr | Form Data
         <th scope="col">Phone</th>
         <th scope="col">Email</th>
         <th scope="col">Code</th>
-        <!-- <th scope="col"><a href="{{ route('export.download', ['format' => 'excel']) }}" class="btn btn-success">Download as Excel</a></th>  -->
-        <!-- <th scope="col"><a href="{{ route('export.download', ['format' => 'pdf']) }}" class="btn btn-danger">Download as PDF</a></th> -->
     </tr>
     </thead>
     <?php
@@ -76,6 +77,11 @@ Tatweer Misr | Form Data
 @endsection
 
 @section("scripts")
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+
 <script>
     // let form = document.getElementById("sub");
     // form.addEventListener("submit", function(e){
@@ -101,48 +107,54 @@ Tatweer Misr | Form Data
         });
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script>
-    document.getElementById('downloadXL').addEventListener('click', function() {
-        const data = [
-            ['National / Passport ID', 'Name', 'Phone', 'Email', 'Code'],
-        ];
+  document.getElementById('exportExcelBtn').addEventListener('click', () => {
 
-        const visibleRows = document.querySelectorAll('tbody tr:not([style*="display: none"])');
-
-        visibleRows.forEach(row => {
-            const rowData = [];
-            rowData.push(row.children[0].textContent.trim());
-            rowData.push(row.children[1].textContent.trim());
-            rowData.push(parseInt(row.children[2].textContent));
-            rowData.push(row.children[3].textContent.trim());
-            rowData.push(row.children[4].textContent.trim());
-
-            data.push(rowData);
-        });
-
-        const workbook = XLSX.utils.book_new();
-        const worksheet = XLSX.utils.aoa_to_sheet(data);
-        XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
-        
-        // Trigger file download
-        XLSX.writeFile(workbook, 'exported_data.xlsx');
-    });
-    document.getElementById('downloadPDF').addEventListener('click', function() {
-        const element = document.querySelector('table');
-
-        // Set configuration options for html2pdf
-        const options = {
-            margin: 5,
-            filename: 'table_data.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        };
-
-        // Create the pdf using html2pdf
-        html2pdf().from(element).set(options).save();
-    });
+    const table = document.querySelector('.table');
+    const worksheet = XLSX.utils.table_to_sheet(table);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Table Data');
+    XLSX.writeFile(workbook, 'table_data.xlsx');
+  });
 </script>
+
+<script>
+  document.getElementById('exportPdfBtn').addEventListener('click', () => {
+
+    const table = document.querySelector('.table');
+    window.jsPDF = window.jspdf.jsPDF;
+    const doc = new jsPDF();
+    const tableData = [];
+    const rows = table.querySelectorAll('tbody tr');
+    for (const row of rows) {
+      if (row.style.display !== 'none') { 
+        const rowData = [];
+        const cells = row.querySelectorAll('td');
+        for (const cell of cells) {
+          rowData.push(cell.textContent.trim());
+        }
+        tableData.push(rowData);
+      }
+    }
+    const header = ['National / Passport ID', 'Name', 'Phone', 'Email', 'Code'];
+    const columnWidths = [40, 40, 40, 40, 40];
+
+    doc.autoTable({
+      head: [header],
+      body: tableData,
+      theme: 'grid',
+      styles: { cellPadding: 1, fontSize: 10 },
+      columnStyles: {
+        0: { cellWidth: columnWidths[0] },
+        1: { cellWidth: columnWidths[1] },
+        2: { cellWidth: columnWidths[2] },
+        3: { cellWidth: columnWidths[3] },
+        4: { cellWidth: columnWidths[4] },
+      },
+    });
+    doc.save('table_data.pdf');
+  });
+</script>
+
 @endsection

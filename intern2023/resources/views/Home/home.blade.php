@@ -95,7 +95,7 @@ Tatweer Misr | Form
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="">National ID *</span>
                                 </div>
-                                <input name="id" type="number" class="form-control" id="natId" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="14">
+                                <input name="id" type="number" class="form-control" id="natId" required min="14" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="14">
                             </div>
                             <div class="input-group" id="extra" name="extra" style="display: none">
                                 <div class="input-group-prepend">
@@ -120,7 +120,7 @@ Tatweer Misr | Form
                                 <input name="qrCode" type="text" class="form-control" hidden id="qrCode">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn-submit">Submit</button>
+                                <button type="submit" onclick="validate()" class="btn-submit">Submit</button>
                             </div>
                     </form>
                 </div>
@@ -162,9 +162,36 @@ Tatweer Misr | Form
         logo.src = "https://tatweermisr.com/images/logo-white.svg";
     </script>
     <script>
-
     function valid(){
-        
+        const selectElement = document.getElementById('defect');
+        const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+        const natIdInput = document.getElementById('natId');
+        const passportInput = document.getElementById('passport');
+        const phoneInput = document.getElementsByName('Phone')[0];
+        const errorMsgDiv = document.getElementById('error-div');
+        const errorMsg = document.getElementById('error-msg');
+        // Clear previous error message, if any
+        errorMsg.textContent = '';
+        errorMsgDiv.style.display = 'none';
+        if (selectedOption === 'id' && natIdInput.value.length !== 14) {
+            // Second option selected, but ID input length is not 14
+            errorMsg.textContent = 'National ID should be 14 digits.';
+            errorMsgDiv.style.display = 'block';
+            return false;
+        } else if (selectedOption === 'pass' && passportInput.value.length !== 9) {
+            // Third option selected, but Passport input length is not 9
+            errorMsg.textContent = 'Passport should be 9 characters.';
+            errorMsgDiv.style.display = 'block';
+            return false;
+        } else if (phoneInput.value.length !== 11) {
+            // Phone number should be at least 11 digits
+            errorMsg.textContent = 'Phone number should be at least 11 digits.';
+            errorMsgDiv.style.display = 'block';
+            return false;
+        }else{
+
+            return true;
+        }
     }
     
     document.getElementById('form').addEventListener('submit', function(event) {
@@ -227,6 +254,16 @@ Tatweer Misr | Form
     }
     function closePopup() {
         document.getElementById("popup").style.display = "none";
+    }
+
+    function validate()
+    {
+    var ddl = document.getElementById("defect");
+    // var selectedValue = ddl.options[ddl.selectedIndex].value;
+    if (ddl.selectedIndex == 0)
+    {
+       alert("National ID / passport must be filled");
+    }
     }
 </script>
     @endsection
