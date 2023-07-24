@@ -19,5 +19,6 @@ class admin
             return $next($request);
         }
         return redirect(route('form'));
+        
     }
 }

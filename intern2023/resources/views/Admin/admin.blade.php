@@ -1,7 +1,7 @@
-@extends ('layout')
+@extends ('adminLayout')
 
 @section('title')
-Tatweer Misr | Admin
+Tatweer Misr | Form Data
 @endsection
 
 @section('page-style')

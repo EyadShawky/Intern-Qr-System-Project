@@ -17,3 +17,26 @@ body{
     left: 150px;
     top: 10px;
 }
+
+
+
+.nav-link{
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    bottom: 30px;
+    margin: 8px;
+    transition: 0.4s;
+    border-radius: 18px;
+}
+
+.nav-link:hover{
+background-color: #EDEDED;
+border-radius: 18px;
+color: #121212 !important;
+}
+
+
+.alert-dismissible{
+    display: none;
+}

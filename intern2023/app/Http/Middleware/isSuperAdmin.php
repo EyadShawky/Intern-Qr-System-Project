@@ -15,9 +15,9 @@ class isSuperAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()?->role->name == 'Super-Admin'){
-            return $next($request);
-            }
-            return redirect(route('dashboard'));
+         if (auth()->user()?->role->name == 'Super-Admin'){
+        return $next($request);
+        }
+        return redirect(route('dashboard'));
     }
 }
