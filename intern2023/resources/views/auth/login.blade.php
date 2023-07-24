@@ -1,24 +1,41 @@
 @extends ('adminLayout')
 
 @section('title')
-    Tatweer misr | Login
+Tatweer misr | Login
 @endsection
 
-@section('contant')
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+@section('content')
+@guest()
+<form action="{{url('/admin/pdRkAAT+XxepOb8drasiSw==/dashboard')}}" method="post" enctype="multipart/form-data">
+    @csrf
+    <div class="container">
+        <div class="input-group mb-3 w-75 m-auto">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">userName</span>
+            </div>
+            <input name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @if($errors->has('email'))
+            <small class="form-text invalid-feedback">{{$errors->first('email')}}</small>
+            @endif
+        </div>
+
+        <div class="input-group mb-3 w-75 m-auto">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+            </div>
+            <input name="password" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            @if($errors->has('password'))
+            <small class="form-text invalid-feedback">{{$errors->first('password')}}</small>
+            @endif
+        </div>
+
+
+        <button type="submit" value="register" class="btn button-style  btn-outline-light w-25">
+            Login
+        </button>
+
+
+    </div>
 </form>
+@endguest
 @endsection

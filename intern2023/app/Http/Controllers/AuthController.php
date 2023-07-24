@@ -28,15 +28,15 @@ class AuthController extends Controller
 
     public function login(Request $request){
         $data = $request->validate([
-            'email' => 'required|email|max:255',
+            'name' => 'required|email|max:255',
             'password' =>'required|string|min:5|max:30',
         ]);
 
-        $islogin = Auth::attempt(['email'=>$data['email'] , 'password' => $data['password']]);
+        $islogin = Auth::attempt(['name'=>$data['name'] , 'password' => $data['password']]);
         if (!$islogin){
             return back()->withErrors(['credentials not correct']);
         }
-        return redirect( url('/admin/categories') );
+        return redirect( url('/admin/pdRkAAT+XxepOb8drasiSw==') );
     }
     public function loginForm(){
         return view('auth.login');
