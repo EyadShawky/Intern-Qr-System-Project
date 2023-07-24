@@ -10,13 +10,16 @@ Tatweer Misr | Admin
 
 @section('content')
 
-    <div class="container">
+    <div class="container search-container">
         <form action="" id="sub" class="search-form">
             <input class="search-input" autocomplete="off" id="natIdPass" type="text" placeholder="National ID / Passport" name="serach" required>
             <button type="submit" disabled><img src="../image/search.png"></button>
         </form>
+        <div>
+            <button id="downloadXL" class="btn btn-success">Download Excel</button>
+            <button id="downloadPDF" class="btn btn-danger">Download PDF</button>
+        </div>
     </div>
-
     <table class="table table-dark container">
     <thead>
     <tr>
@@ -94,6 +97,50 @@ Tatweer Misr | Admin
                 row.style.display = "none";
             }
         });
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    document.getElementById('downloadXL').addEventListener('click', function() {
+        const data = [
+            ['National / Passport ID', 'Name', 'Phone', 'Email', 'Code'],
+        ];
+
+        const visibleRows = document.querySelectorAll('tbody tr:not([style*="display: none"])');
+
+        visibleRows.forEach(row => {
+            const rowData = [];
+            rowData.push(row.children[0].textContent.trim());
+            rowData.push(row.children[1].textContent.trim());
+            rowData.push(parseInt(row.children[2].textContent));
+            rowData.push(row.children[3].textContent.trim());
+            rowData.push(row.children[4].textContent.trim());
+
+            data.push(rowData);
+        });
+
+        const workbook = XLSX.utils.book_new();
+        const worksheet = XLSX.utils.aoa_to_sheet(data);
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+        
+        // Trigger file download
+        XLSX.writeFile(workbook, 'exported_data.xlsx');
+    });
+    document.getElementById('downloadPDF').addEventListener('click', function() {
+        const element = document.querySelector('table');
+
+        // Set configuration options for html2pdf
+        const options = {
+            margin: 5,
+            filename: 'table_data.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        };
+
+        // Create the pdf using html2pdf
+        html2pdf().from(element).set(options).save();
     });
 </script>
 @endsection
