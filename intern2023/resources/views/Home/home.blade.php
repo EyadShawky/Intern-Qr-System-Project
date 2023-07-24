@@ -40,7 +40,7 @@ Tatweer Misr | Form
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="">National ID / Passport </span>
-                                    <select onchange='checkIfYes()' class="forms-control" id="defect" name="defect">
+                                    <select onchange='checkIfYes()' style="height: 61px;" class="form-control" id="defect" name="defect">
                                         <option value="" disabled selected>National ID / Passport?</option>
                                         <option id="id" value="id">National ID</option>
                                         <option id="pass" value="pass">Passport</option>

@@ -70,8 +70,8 @@ class UserController extends Controller
         $user_code->save();
 
         // Send email
-        Mail::to($request->input('Email'))
-            ->send(new contactMail($inputs, $user_code->code));
+        // Mail::to($request->input('Email'))
+        //     ->send(new contactMail($inputs, $user_code->code));
 
         return redirect('http://127.0.0.1:8000/qr?q=' . $user_id);
     }
