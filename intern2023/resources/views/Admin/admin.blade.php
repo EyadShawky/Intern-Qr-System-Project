@@ -1,4 +1,4 @@
-@extends ('layout')
+@extends ('adminLayout')
 
 @section('title')
 Tatweer Misr | Admin
@@ -16,8 +16,8 @@ Tatweer Misr | Admin
             <button type="submit" disabled><img src="../image/search.png"></button>
         </form>
         <div>
-            <button id="downloadXL" class="btn btn-success">Download Excel</button>
             <button id="downloadPDF" class="btn btn-danger">Download PDF</button>
+            <button id="downloadXL" class="btn btn-outline-success">Download Excel</button>
         </div>
     </div>
     <table class="table table-dark container">
@@ -28,7 +28,7 @@ Tatweer Misr | Admin
         <th scope="col">Phone</th>
         <th scope="col">Email</th>
         <th scope="col">Code</th>
-        <th scope="col"><a href="{{ route('export.download', ['format' => 'excel']) }}" class="btn btn-success">Download as Excel</a></th> 
+        <!-- <th scope="col"><a href="{{ route('export.download', ['format' => 'excel']) }}" class="btn btn-success">Download as Excel</a></th>  -->
         <!-- <th scope="col"><a href="{{ route('export.download', ['format' => 'pdf']) }}" class="btn btn-danger">Download as PDF</a></th> -->
     </tr>
     </thead>
