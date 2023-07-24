@@ -32,8 +32,7 @@
             <div class="navbar-nav m-auto ">
                 <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==/dashboard">Dashboard</a>
                 <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==">Form Data</a>
-                <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==/create-admin">Create Admin</a>
-
+                <!-- <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==/create-admin">Create Admin</a> -->
             </div>
         </div>
     </nav>
