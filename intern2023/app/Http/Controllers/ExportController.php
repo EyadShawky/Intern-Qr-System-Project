@@ -1,15 +1,14 @@
 <?php
+
 namespace App\Http\Controllers;
-use App\Models\User;
+use App\Exports\UsersExport;
+use App\Models\UserData;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Http\Controllers\UsersExport;
-
-
 class ExportController extends Controller
 {
     public function export(Request $request, $format){
-        $users = User::all();
+        $users = UserData::all();
         if($format === 'excel'){
             return Excel::download(new UsersExport($users),'users.xlsx');
         }
@@ -18,8 +17,4 @@ class ExportController extends Controller
         }
     }
 
-
-    public function index (){
-        return 'hello';
-    }
 }

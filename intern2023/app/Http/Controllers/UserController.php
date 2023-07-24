@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\contactMail;
+use App\Models\dashboardData;
 use App\Models\userCode;
 use App\Models\UserData;
 use Illuminate\Http\Request;
@@ -12,10 +13,10 @@ class UserController extends Controller
 {
 
     public function index()
-    {
+    {   $dashboards = dashboardData::all();
         $userCodeDB = userCode::orderBy('created_at', 'asc')->get();
         $userDataDB = UserData::orderBy('created_at', 'asc')->get();
-        return view('Home.home', compact('userCodeDB', 'userDataDB'));
+        return view('Home.home', compact('userCodeDB', 'userDataDB' , 'dashboards'));
     }
 
 

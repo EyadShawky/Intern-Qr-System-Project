@@ -11,14 +11,9 @@ body{
     text-transform: capitalize;
 }
 
-/* .forms-control{
-    padding: 20px;
-    background-color: #ffff;
-    text-align: center;
-    text-size-adjust: 50px;
-    color: #171717;
-    text-size-adjust: 20px;
-    box-sizing: border-box;
-    width: 300px;
-    border-radius: 0 10px 10px 0;
-} */
+
+.button-style{
+    position: relative;
+    left: 150px;
+    top: 10px;
+}
