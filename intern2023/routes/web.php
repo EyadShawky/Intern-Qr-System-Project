@@ -39,5 +39,9 @@ Route::middleware('admins')->group(function () {
         Route::post('/admin/pdRkAAT+XxepOb8drasiSw==/dashboard', [dashboardController::class, 'store']);
         Route::get('/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/{dashboards}/edit', [dashboardController::class, 'edit'])->name('dashboard.edit');
         Route::put('/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/{dashboards}', [dashboardController::class, 'update']);
+        Route::get('/admin/pdRkAAT+XxepOb8drasiSw==/create-admin', [AuthController::class, 'registerForm']);
+        Route::post('/admin/pdRkAAT+XxepOb8drasiSw==/create-admin', [AuthController::class, 'register']);
     });
+
+
 });
