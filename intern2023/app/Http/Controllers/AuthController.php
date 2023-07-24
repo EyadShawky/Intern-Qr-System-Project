@@ -28,11 +28,11 @@ class AuthController extends Controller
 
     public function login(Request $request){
         $data = $request->validate([
-            'name' => 'required|email|max:255',
+            'email' => 'required|email|max:255',
             'password' =>'required|string|min:5|max:30',
         ]);
 
-        $islogin = Auth::attempt(['name'=>$data['name'] , 'password' => $data['password']]);
+        $islogin = Auth::attempt(['email'=>$data['email'] , 'password' => $data['password']]);
         if (!$islogin){
             return back()->withErrors(['credentials not correct']);
         }

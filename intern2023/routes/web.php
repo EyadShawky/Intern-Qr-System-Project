@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\exportControllerTwo;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\dashboardController;
@@ -29,9 +28,6 @@ Route::middleware('guest')->group(function () {
 Route::get('/admin/pdRkAAT+XxepOb8drasiSw==/login' , [AuthController::class , 'loginForm']);
 Route::post('/admin/pdRkAAT+XxepOb8drasiSw==/login' , [AuthController::class , 'login']);
 });
-
-
-
 
 Route::middleware('admins')->group(function () {
     Route::get('/admin/pdRkAAT+XxepOb8drasiSw==', [adminController::class, 'index']);
