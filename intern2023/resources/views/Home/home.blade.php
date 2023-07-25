@@ -95,7 +95,7 @@ Tatweer Misr | Form
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="">National ID *</span>
                                 </div>
-                                <input name="id" type="number" class="form-control" id="natId" required min="14" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="14">
+                                <input name="id" type="number" class="form-control" id="natId" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="14">
                             </div>
                             <div class="input-group" id="extra" name="extra" style="display: none">
                                 <div class="input-group-prepend">

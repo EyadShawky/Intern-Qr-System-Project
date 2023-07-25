@@ -8,11 +8,16 @@ use App\Http\Controllers\ExportControllerTwo;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [UserController::class, 'index'])->name('form');
-Route::post('/', [UserController::class, 'store']);
-
-Route::get('/qr', [UserCodeController::class, 'qrCode'])->name('Home.qr');
-Route::post('/user-code', [UserCodeController::class, 'store'])->name('user-code.store');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
 Route::get('/export/{format}', [ExportController::class, 'export'])->name('export.download');
 Route::get('/export', [ExportControllerTwo::class, 'index']);

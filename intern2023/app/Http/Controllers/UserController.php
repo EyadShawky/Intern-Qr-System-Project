@@ -31,10 +31,6 @@ class UserController extends Controller
             'Email' => 'required|email|unique:users',
         ]);
 
-        // if ($v->fails()) {
-        //     return redirect()->back()->withErrors($v);
-        // }
-
         $dataMail = new UserData();
         $dataMail->id = $inputs['id'];
         $dataMail->Fname = $inputs['Fname'];
