@@ -23,7 +23,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $inputs = $request->all();
-        $v = validator($inputs, [
+        validator($inputs, [
             'id' => 'required|string|max:14|min:9',
             'Fname' => 'required|string|max:255',
             'Lname' => 'required|string|max:255',
@@ -31,9 +31,9 @@ class UserController extends Controller
             'Email' => 'required|email|unique:users',
         ]);
 
-        if ($v->fails()) {
-            return redirect()->back()->withErrors($v);
-        }
+        // if ($v->fails()) {
+        //     return redirect()->back()->withErrors($v);
+        // }
 
         $dataMail = new UserData();
         $dataMail->id = $inputs['id'];
@@ -52,7 +52,9 @@ class UserController extends Controller
             $prefix = $parts[0];
             $number = intval($parts[1]);
             $nextNumber = $number + 1;
-            if ($nextNumber > 10) {
+
+            $flip = dashboardData::all()[0]["codeFlip"];
+            if ($nextNumber > $flip) {
                 // Increment the prefix to the next letter
                 $prefix = chr(ord($prefix) + 1);
 

@@ -23,6 +23,8 @@ Tatweer Misr | Dashboard Admin
                 echo('
                      
             <a id="create" class="btn btn-danger d-flex justify-content-center align-items-center" href="http://127.0.0.1:8000/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/create">
+                    
+            <a id="create" class="btn btn-danger d-flex justify-content-center align-items-center" href="http://127.0.0.1:8000/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/create">
                 Create View
             </a>
                 ');
@@ -37,6 +39,7 @@ Tatweer Misr | Dashboard Admin
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
+                <th scope="col">Code-Flip</th>
                 <th scope="col">Update</th>
                 <th scope="col">Created At</th>
             </tr>
@@ -46,6 +49,7 @@ Tatweer Misr | Dashboard Admin
             <tr>
                 <th scope="row">{{$dashboard->id}}</th>
                 <th scope="row">{{$dashboard->title}}</th>
+                <th scope="row">{{$dashboard->codeFlip}}</th>
                 <th scope="row">
                     <a  href="{{ url("/admin/pdRkAAT+XxepOb8drasiSw==/dashboard/$dashboard->id/edit") }}">
                         <svg width="100" height="30"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white">

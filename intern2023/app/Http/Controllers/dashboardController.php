@@ -27,6 +27,7 @@ class dashboardController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'img' => 'required|image|mimes:png,jpg|max:1000240',
+            'codeFlip' => 'required|integer|min:1',
         ]);
         $fileName = Storage::putFile("public/dashboard" , $data['img']);
         $data['img'] =str_replace('public/' , 'storage/' , $fileName);
@@ -47,14 +48,16 @@ class dashboardController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'img' => 'required|image|mimes:png,jpg|max:1000240',
+            'codeFlip' => 'required|integer|min:1',
         ]);
     
         $fileName = Storage::putFile('public/dashboard', $data['img']);
         $data['img'] = str_replace('public/', 'storage/', $fileName);
-    
+        
         dashboardData::findOrFail($titleID)->update([
             "title" => $request->title,
             "img" => $data['img'],
+            "codeFlip" => $request->codeFlip,
         ]);
     
         return redirect(url('/admin/pdRkAAT+XxepOb8drasiSw==/dashboard'));

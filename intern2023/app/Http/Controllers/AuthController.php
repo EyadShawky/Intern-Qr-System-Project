@@ -58,7 +58,7 @@ class AuthController extends Controller
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->password = bcrypt($request['password']);
-        $user->role_id = ADMIN_ROLE;
+        $user->role_id = 2;
         $user->save();
         return redirect( url('/admin/pdRkAAT+XxepOb8drasiSw==') );
     }

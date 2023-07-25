@@ -6,6 +6,11 @@ Tatweer Misr | QR
 
 @section('page-style')
     <link rel="stylesheet" href="{{ ('css/qr.css') }}">
+    <style>
+        body{
+            background-image: url("{{asset(($dashboardData[0]->img))}}");
+        }
+    </style>
 @endsection
 
 @section('content')

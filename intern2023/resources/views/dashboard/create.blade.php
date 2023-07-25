@@ -30,6 +30,13 @@ Tatweer Misr | Dashboard Admin
                 </div>
             </div>
                 
+            <div class="input-group mb-3 w-75 m-auto">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Code-Flip</span>
+                </div>
+                <input name="codeFlip" type="number" min="1" max="99" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="eg: 10 for A-010">
+            </div>
+
            <input type="submit" value="Add Into Dashboard" class="btn button-style  btn-danger m-auto">
            
 

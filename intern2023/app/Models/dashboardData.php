@@ -10,5 +10,5 @@ class dashboardData extends Model
 
     use HasFactory;
     protected $table = 'dashboard_data';
-    protected $fillable = ['title','img'];
+    protected $fillable = ['title','img','codeFlip'];
 }
