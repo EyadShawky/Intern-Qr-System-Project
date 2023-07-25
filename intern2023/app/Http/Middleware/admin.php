@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class admin
@@ -15,10 +16,20 @@ class admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()?->role->name == 'Super-Admin' || auth()->user()?->role->name == 'Admin'){
+        if (!auth()->user()){
+            return redirect(route('login'));
+        }
+    
+        if (auth()->user()->role->name == 'Super-Admin' || auth()->user()->role->name == 'Admin'){
             return $next($request);
         }
         return redirect(route('form'));
         
+    }
+
+
+    public function logout(){
+        Auth::logout();
+        return redirect(url('/admin/pdRkAAT+XxepOb8drasiSw==/login'));
     }
 }

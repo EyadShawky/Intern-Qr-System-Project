@@ -26,19 +26,27 @@
             <img id="logo" src="/Tatwwer-Misr.jpg" class="d-inline-block align-top" alt="Tatwwer-Misr-logo">
         </a>
     </nav>
-
+    @auth
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav m-auto ">
-                <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==/dashboard">Dashboard</a>
+                @if(auth()->user()?->role_id == 1)
                 <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==">Form Data</a>
+                <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==/dashboard">Dashboard</a>
                 <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==/create-admin">Create Admin</a>
-
+                @endif
+                <form action="{{url('/admin/pdRkAAT+XxepOb8drasiSw==/logout')}}" method="post">
+                    @csrf
+                    <input  type="image" src="/image/logout (1).png" class="icone-style" width="40" height="40" value="logout" >
+                </form>
+                
             </div>
         </div>
     </nav>
 
+    @endauth
 
+   
     <div></div> @yield('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>

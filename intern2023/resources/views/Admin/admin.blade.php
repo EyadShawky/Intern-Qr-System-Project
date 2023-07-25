@@ -19,8 +19,8 @@ Tatweer Misr | Form Data
             <button type="submit" disabled><img src="../image/search.png"></button>
         </form>
         <div>
-            <button id="exportExcelBtn" class="btn btn-success">Download Excel</button>
-            <button id="exportPdfBtn"  class="btn btn-danger">Download PDF</button>
+        <button id="exportPdfBtn"  class="btn btn-danger">Download PDF</button>
+            <button id="exportExcelBtn" class="btn btn-outline-success">Download Excel</button>
         </div>
     </div>
     <table class="table table-dark container">

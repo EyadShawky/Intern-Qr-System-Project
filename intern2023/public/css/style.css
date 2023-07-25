@@ -40,3 +40,9 @@ color: #121212 !important;
 .alert-dismissible{
     display: none;
 }
+
+.icone-style{
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
