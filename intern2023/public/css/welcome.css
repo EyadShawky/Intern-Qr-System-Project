@@ -110,6 +110,81 @@
             from(rgba(23, 23, 23, 1)), to(rgba(237, 237, 237, 0)));
 }
 
+@media screen and (max-width:430px){
+    .container-img-admin {
+        padding: 0%;
+        margin-top: 320%;
+        margin-left: -55%;
+        display: flex;
+        flex-direction: column-reverse;
+        height: 300px;
+        width: 300px;
+    }
+    .btn-submit{
+        margin-left: 65%;
+    }
+    .textStyle {
+        font-size: 20px;
+    }
+    .form-home{
+        margin-top: -15%;
+        margin-left: -5%;
+    }
+    .img-fluid{
+        height: 450px;
+        width: 450px;
+    }
+    #error-div{
+        width: 285% !important;
+    }
+}
+
+@media screen and (max-width:380px){
+    .container-img-admin {
+        padding: 0%;
+        margin-top: 380%;
+        margin-left: -70%;
+        display: flex;
+        flex-direction: column-reverse;
+        height: 350px;
+        width: 350px;
+    }
+    .btn-submit{
+        margin-left: 75%;
+    }
+    .img-fluid{
+        height: 450px;
+        width: 450px;
+    }
+    #error-div{
+        width: 330% !important;
+    }
+    
+}
+
+@media screen and (max-width:325px){
+    .container-img-admin {
+        padding: 0%;
+        margin-top: 450%;
+        margin-left: -60%;
+        display: flex;
+        flex-direction: column-reverse;
+        height: 400px;
+        width: 350px;
+    }
+    .btn-submit{
+        margin-left: 120%;
+    }
+    .img-fluid{
+        height: 300px;
+        width: 350px;
+    }
+    #error-div{
+        box-sizing: content-box;
+        width: 341% !important;
+    }
+}
+
 .textStyle {
     z-index: 9999999999;
     color: #ffffff;
