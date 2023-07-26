@@ -23,6 +23,7 @@ Tatweer Misr | Form Data
             <button id="exportExcelBtn" class="btn btn-outline-success">Download Excel</button>
         </div>
     </div>
+    <div class="cont-tb">
     <table class="table table-dark container">
     <thead>
     <tr>
@@ -72,7 +73,7 @@ Tatweer Misr | Form Data
     @endforeach -->
 
 </table>
-
+</div>
 
 @endsection
 
