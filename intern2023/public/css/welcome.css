@@ -64,6 +64,8 @@
     padding: 10px;
 }
 
+
+
 .btn-submit {
     margin: auto;
     color: #EDEDED;
@@ -140,7 +142,6 @@
 }
 
 .form-home {
-    /* background-color: #DA0037; */
     position: relative;
     top: 30px;
     width: 100%;

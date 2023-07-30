@@ -48,7 +48,7 @@ Tatweer Misr | Form
 </div>
 <div class="container form-home">
     <div class="row">
-        <div class="col">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <section class="">
                 <div>
                     <form id="form" method="post" enctype="multipart/form-data">
@@ -128,7 +128,7 @@ Tatweer Misr | Form
 
         </div>
         @foreach($dashboards as $dashboard)
-        <div class="col">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <div class="container-img-admin">
                 <img src="{{asset(($dashboard->img))}}" class="img-fluid" alt="Tatweer-Misr.jpg">
                 <div class="textStyle">
