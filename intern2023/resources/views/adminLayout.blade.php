@@ -15,6 +15,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
+
+    <style>
+        .navbar-nav.m-auto{
+            flex-direction: row;
+            justify-content: center;
+        }
+
+    </style>
     @yield('page-style')
 </head>
 
@@ -28,7 +36,7 @@
     </nav>
     @auth
     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav m-auto ">
                 @if(auth()->user()?->role_id == 1)
                 <a class="nav-link text-white" href="/admin/pdRkAAT+XxepOb8drasiSw==">Form Data</a>
@@ -46,8 +54,7 @@
 
     @endauth
 
-   
-    <div></div> @yield('content')
+    @yield('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

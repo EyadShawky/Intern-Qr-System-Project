@@ -29,7 +29,7 @@ class AuthController extends Controller
         ]);
 
         if (!$attempt){
-            return back()->withErrors(['Email or password not correct', 401]);
+            return back()->withErrors(['loginError' => 'Invalid credentials. Please try again.']);
         }
         return redirect( url('/admin/pdRkAAT+XxepOb8drasiSw==') );
 
